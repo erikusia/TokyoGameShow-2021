@@ -300,24 +300,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4077802070858237328}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &462643794
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462643793}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &529400586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,21 +1122,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752710, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752710, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752710, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4077802070462752710, guid: 23112d0716dab5a418f5ffabf41d60e8,
         type: 3}
