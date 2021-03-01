@@ -1049,21 +1049,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u30D7\u30EC\u30A4\u30E4\u30FC"
       objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752706, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_dash
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752706, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_walk
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752706, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_speed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4077802070462752710, guid: 23112d0716dab5a418f5ffabf41d60e8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1118,11 +1103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4077802070462752711, guid: 23112d0716dab5a418f5ffabf41d60e8,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23112d0716dab5a418f5ffabf41d60e8, type: 3}
