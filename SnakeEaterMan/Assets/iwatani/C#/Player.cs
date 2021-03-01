@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
+    CharacterController m_controller;
     public float m_walk = 10;
     public float m_dash = 7;
     public float m_rotato = 2;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
         if(x!=0||z!=0)
         {
             // 矢印キーが押されている方向にプレイヤーを移動する
-            transform.localPosition += transform.forward / m_speed;
+            m_controller.Move(transform.forward / m_speed);
 
             //回転
             var direction = new Vector3(x, 0, z);
