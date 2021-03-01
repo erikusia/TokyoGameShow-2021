@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         }
         else dash = false;
 
-        if (dash == true && dashTime > 0.1)
+        if (dash == true && dashTime > 0)
         {
             m_speed = m_dash;
             dashTime -= Time.deltaTime;
@@ -59,6 +59,10 @@ public class Player : MonoBehaviour
             
             if (dashTime < 1) 
             {
+                if(dashTime <= 0)
+                {
+                    dashTime = 0;
+                }
                 waitTime+= Time.deltaTime;
 
                 if(waitTime > 1)
@@ -70,8 +74,6 @@ public class Player : MonoBehaviour
                         waitTime = 0;
                     }
                 }
-                
-
             }
             m_speed = m_walk;
         }
