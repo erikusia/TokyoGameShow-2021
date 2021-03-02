@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     CharacterController m_controller;
+    GameObject SliderObject;
+    Slider DashSlider;
     public float m_walk = 10;
     public float m_dash = 7;
     public float m_rotato = 2;
@@ -15,11 +18,15 @@ public class Player : MonoBehaviour
     bool dash=false;
     float dashTime = 1;
     float waitTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_controller = GetComponent<CharacterController>();
+        SliderObject = GameObject.FindWithTag("DashP1");
+        //Debug.Log("Name:" + SliderObject.name);
+        DashSlider = SliderObject.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -30,7 +37,9 @@ public class Player : MonoBehaviour
         //トランスフォーム取得
         Transform myTransform = this.transform;
 
-        if(x!=0||z!=0)
+        DashSlider.value = dashTime;
+
+        if (x!=0||z!=0)
         {
             // 矢印キーが押されている方向にプレイヤーを移動する
             m_controller.Move(transform.forward / m_speed);
@@ -52,7 +61,7 @@ public class Player : MonoBehaviour
         {
             m_speed = m_dash;
             dashTime -= Time.deltaTime;
-            Debug.Log("ダッシュ");
+            //Debug.Log("ダッシュ");
         }
         else
         {
@@ -77,6 +86,6 @@ public class Player : MonoBehaviour
             }
             m_speed = m_walk;
         }
-        Debug.Log(dashTime);
+        //Debug.Log(dashTime);
     }
 }
