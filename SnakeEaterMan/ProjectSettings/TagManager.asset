@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - DashP1
+  - DashP2
+  - DashP3
+  - DashP4
   layers:
   - Default
   - TransparentFX

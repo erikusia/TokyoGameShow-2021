@@ -32,8 +32,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal1");
+        float z = Input.GetAxis("Vertical1");
         //トランスフォーム取得
         Transform myTransform = this.transform;
 
