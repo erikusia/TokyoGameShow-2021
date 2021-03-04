@@ -42,6 +42,9 @@ public class Player4 : MonoBehaviour
         {
             // 矢印キーが押されている方向にプレイヤーを移動する
             m_controller.Move(transform.forward / m_speed);
+            Vector3 pos = myTransform.position;
+            pos.y = 0.3f;
+            myTransform.position = pos;
 
             //回転
             var direction = new Vector3(x, 0, z);
