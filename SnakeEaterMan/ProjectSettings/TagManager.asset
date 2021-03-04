@@ -8,6 +8,8 @@ TagManager:
   - DashP2
   - DashP3
   - DashP4
+  - tail
+  - head
   layers:
   - Default
   - TransparentFX
