@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public float m_dashTimePlus = 0.1f;
     private float m_speed;
     Vector3 local_angle;
-    bool dash=false;
+    bool dash = false;
     float dashTime = 1;
     float waitTime = 0;
 
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
         DashSlider.value = dashTime;
 
-        if (x!=0||z!=0)
+        if (x != 0 || z != 0)
         {
             // 矢印キーが押されている方向にプレイヤーを移動する
             m_controller.Move(transform.forward / m_speed);
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
             //回転
             var direction = new Vector3(x, 0, z);
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.localRotation = Quaternion.Slerp(myTransform.localRotation,targetRotation,Time.deltaTime* m_rotato);
+            transform.localRotation = Quaternion.Slerp(myTransform.localRotation, targetRotation, Time.deltaTime * m_rotato);
         }
 
         if (Input.GetKey("joystick button 3"))
@@ -68,16 +68,16 @@ public class Player : MonoBehaviour
         }
         else
         {
-            
-            if (dashTime < 1) 
+
+            if (dashTime < 1)
             {
-                if(dashTime <= 0)
+                if (dashTime <= 0)
                 {
                     dashTime = 0;
                 }
-                waitTime+= Time.deltaTime;
+                waitTime += Time.deltaTime;
 
-                if(waitTime > 1)
+                if (waitTime > 1)
                 {
                     dashTime += m_dashTimePlus;
                     if (dashTime > 1)
@@ -90,5 +90,13 @@ public class Player : MonoBehaviour
             m_speed = m_walk;
         }
         //Debug.Log(dashTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "tail")
+        {
+            Debug.Log("hit");
+        }
     }
 }
