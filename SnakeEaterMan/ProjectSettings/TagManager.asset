@@ -10,6 +10,8 @@ TagManager:
   - DashP4
   - tail
   - head
+  - player
+  - movePointsA
   layers:
   - Default
   - TransparentFX
