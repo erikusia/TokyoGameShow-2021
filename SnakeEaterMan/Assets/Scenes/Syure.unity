@@ -284,6 +284,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d65c14a0dc763a443b0b95f1b3a8c6de, type: 3}
+--- !u!4 &1167022086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5385238018012760575, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
+    type: 3}
+  m_PrefabInstance: {fileID: 658860859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1756560179
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,12 +382,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 24.193, y: -5.5160003, z: 31.357002}
---- !u!4 &1974461785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5385238016920659716, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
-    type: 3}
-  m_PrefabInstance: {fileID: 658860859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1982740211797827044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,28 +452,38 @@ PrefabInstance:
     - target: {fileID: 1982740212598489728, guid: bb6f676e397bc374782eed3ad5af1480,
         type: 3}
       propertyPath: m_Speed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1982740212598489728, guid: bb6f676e397bc374782eed3ad5af1480,
         type: 3}
       propertyPath: m_Acceleration
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1982740212598489728, guid: bb6f676e397bc374782eed3ad5af1480,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1982740212598489729, guid: bb6f676e397bc374782eed3ad5af1480,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1974461785}
+      objectReference: {fileID: 1167022086}
     - target: {fileID: 1982740212598489729, guid: bb6f676e397bc374782eed3ad5af1480,
         type: 3}
       propertyPath: distance
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1982740212598489729, guid: bb6f676e397bc374782eed3ad5af1480,
         type: 3}
       propertyPath: runpoint
       value: 
       objectReference: {fileID: 356123651}
+    - target: {fileID: 1982740212598489733, guid: bb6f676e397bc374782eed3ad5af1480,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb6f676e397bc374782eed3ad5af1480, type: 3}
 --- !u!1001 &2802615921842537254
@@ -542,6 +552,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test_movepoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802615921493755682, guid: 61ab6379c7adb1d4196cada472958b8c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802615921493755683, guid: 61ab6379c7adb1d4196cada472958b8c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ab6379c7adb1d4196cada472958b8c, type: 3}
