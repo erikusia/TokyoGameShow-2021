@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class check_camera : MonoBehaviour
 {
+    //草のカメラ
     public Camera cam;
-    //   public GameObject kusaaa;
-    //bool in_cam;
     bool in_cam = true;
+
+
     void Start()
     {
         //cam = GetComponent<Camera>();
