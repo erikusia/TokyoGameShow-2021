@@ -17,7 +17,6 @@ public class escapeflog : MonoBehaviour
     [SerializeField]
     private Transform runpoint;//目標（帰宅するポイント
     [SerializeField]
-
     private GameObject flog;
 
     public float distance;//距離
@@ -95,12 +94,9 @@ public class escapeflog : MonoBehaviour
             if (GameObject.FindWithTag("head4"))
             {
                 flog.GetComponent<Collider>().enabled = false;
-
                 deathflag = true;
             }
         }
-
-        //flog.GetComponent<Renderer>().material = materials[2];
         flog.GetComponent<Collider>().enabled = false;
 
         if (deathflag == true)
@@ -110,7 +106,7 @@ public class escapeflog : MonoBehaviour
             deathCout += Time.deltaTime;
 
             flogpos.transform.localPosition = runpoint.transform.localPosition;
-            //flogpos.GetComponent<Player1Move>().enabled = false;
+
         }
         if (deathCout > 6)
         {
@@ -120,7 +116,6 @@ public class escapeflog : MonoBehaviour
             deathCout = 0;
             deathflag = false;
             //flog.GetComponent<Renderer>().material = materials[Random.Range(0, 1)];
-            //flogpos.GetComponent<Player1Move>().enabled = true;
         }
     }
 
