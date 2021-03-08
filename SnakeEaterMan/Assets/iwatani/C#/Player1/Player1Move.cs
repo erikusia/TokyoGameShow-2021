@@ -44,6 +44,8 @@ public class Player1Move : MonoBehaviour
 
         if (x != 0 || z != 0)
         {
+            if (Time.timeScale == 0)
+                return;
             // 矢印キーが押されている方向にプレイヤーを移動する
             m_controller.Move(transform.forward / m_speed);
             Vector3 pos = myTransform.position;

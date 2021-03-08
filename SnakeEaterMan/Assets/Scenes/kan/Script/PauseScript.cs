@@ -15,7 +15,6 @@ public class PauseScript : MonoBehaviour
 	void Update()
 	{
 
-
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 6"))
 		{
 			if (pauseUIInstance == null)
