@@ -16,7 +16,7 @@ public class Player2Head : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObjects[0].GetComponent<Renderer>().material = materials[2];
+        gameObjects[0].GetComponent<Renderer>().material = materials[1];
     }
 
     // Update is called once per frame
@@ -39,11 +39,13 @@ public class Player2Head : MonoBehaviour
         if (collision.gameObject.tag == "tail" && hit == false)
         {
             //Debug.Log(collision.gameObject.tag);
-            hit = true;
-            string tailMatName= collision.gameObject.GetComponent<Renderer>().material.name;
+            tailMaterial = collision.gameObject.GetComponent<Renderer>().material;
+            string tailMatName = tailMaterial.name;
+
             //Debug.Log("相手のしっぽ:" + tailMaterial.name);
             for (int i = 0; i < gameObjects.Length; i++)
             {
+                hit = true;
                 //Debug.Log("自分のしっぽ:" + gameObjects[i].GetComponent<Renderer>().material.name);
                 string objectName = gameObjects[i].GetComponent<Renderer>().material.name;
                 string white = materials[4].name;

@@ -16,7 +16,7 @@ public class Player3Head : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObjects[0].GetComponent<Renderer>().material = materials[3];
+        gameObjects[0].GetComponent<Renderer>().material = materials[2];
     }
 
     // Update is called once per frame

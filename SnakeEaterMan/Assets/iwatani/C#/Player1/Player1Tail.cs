@@ -33,15 +33,19 @@ public class Player1Tail : MonoBehaviour
             //リスポーンする場所に移動
             PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
             PlayerPos.GetComponent<Player1Move>().enabled = false;
-
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                gameObjects[i].GetComponent<Renderer>().material = materials[5];
+                gameObjects[i].GetComponent<Collider>().enabled = false;
+            }
             if (respawnCount > 3)
             {
-                for (int i = 1; i < gameObjects.Length; i++)
+                for (int i = 0; i < gameObjects.Length; i++)
                 {
                     gameObjects[i].GetComponent<Renderer>().material = materials[4];
-                    gameObjects[i].GetComponent<Collider>().enabled = false;
+                    gameObjects[i].GetComponent<Collider>().enabled = true;
                 }
-                gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 3)];
+                gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 4)];
                 deathFlag = false;
                 PlayerPos.GetComponent<Player1Move>().enabled = true;
             }
@@ -68,7 +72,7 @@ public class Player1Tail : MonoBehaviour
 
             string tailMatName = gameObjects[0].GetComponent<Renderer>().material.name;
             string white = "White";
-            if (string.Compare(tailMatName, white) == 1)
+            if (white.Equals(tailMatName.Substring(0, 5)))
             {
                 for (int i = 0; i < gameObjects.Length; i++)
                 {

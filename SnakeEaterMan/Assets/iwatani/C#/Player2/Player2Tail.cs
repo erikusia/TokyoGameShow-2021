@@ -27,19 +27,25 @@ public class Player2Tail : MonoBehaviour
     {
         if (deathFlag == true)
         {
-            //Debug.Log("Player2Dead");
+            Debug.Log("Player1Dead");
             //リスポーンするまでの時間計測
             respawnCount += Time.deltaTime;
             //リスポーンする場所に移動
             PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
             PlayerPos.GetComponent<Player2Move>().enabled = false;
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                gameObjects[i].GetComponent<Renderer>().material = materials[5];
+                gameObjects[i].GetComponent<Collider>().enabled = false;
+            }
             if (respawnCount > 3)
             {
-                for (int i = 1; i < gameObjects.Length; i++)
+                for (int i = 0; i < gameObjects.Length; i++)
                 {
                     gameObjects[i].GetComponent<Renderer>().material = materials[4];
+                    gameObjects[i].GetComponent<Collider>().enabled = true;
                 }
-                gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 3)];
+                gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 4)];
                 deathFlag = false;
                 PlayerPos.GetComponent<Player2Move>().enabled = true;
             }
@@ -57,7 +63,7 @@ public class Player2Tail : MonoBehaviour
         if (collision.gameObject.tag == "head1" || collision.gameObject.tag == "head3" ||
             collision.gameObject.tag == "head4" && deathFlag == false)
         {
-            Debug.Log("食べられた");
+            //Debug.Log("食べられた");
             for (int i = 0; i < gameObjects.Length - 2; i++)
             {
                 gameObjects[i].GetComponent<Renderer>().material = gameObjects[i + 1].GetComponent<Renderer>().material;
@@ -66,7 +72,7 @@ public class Player2Tail : MonoBehaviour
 
             string tailMatName = gameObjects[0].GetComponent<Renderer>().material.name;
             string white = "White";
-            if (string.Compare(tailMatName, white) == 1)
+            if (white.Equals(tailMatName.Substring(0, 5)))
             {
                 for (int i = 0; i < gameObjects.Length; i++)
                 {
