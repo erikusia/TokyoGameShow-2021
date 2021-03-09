@@ -20,9 +20,12 @@ public class dtc_flog : MonoBehaviour
 
     [SerializeField]
     private Transform target;//目標(プレイヤー
-    public Transform t2;
-    public Transform t3;
-    public Transform t4;
+    [SerializeField]
+    private Transform t2;
+    [SerializeField]
+    private Transform t3;
+    [SerializeField]
+    private Transform t4;
 
     private float distance;//プレイヤー距離
     private float distance2;
@@ -48,13 +51,11 @@ public class dtc_flog : MonoBehaviour
         //agent.autoBraking = false;
         agent.destination = ROOT[nextIndex].transform.position;
     }
-
-
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag =="rA")
+        if (other.gameObject.tag == "rA")
         {
-            if(nextIndex < ROOT.Length -1)
+            if (nextIndex < ROOT.Length - 1)
             {
                 nextIndex++;
             }
@@ -63,11 +64,12 @@ public class dtc_flog : MonoBehaviour
                 nextIndex = 0;
             }
         }
-        //インデックスに応じた目的地に設定する
-        agent.destination = ROOT[nextIndex].transform.position;
+
     }
     void Update()
     {
+        //インデックスに応じた目的地に設定する
+        agent.destination = ROOT[nextIndex].transform.position;
         //二者間の距離を計算してfloat 一定値に行かなければ追跡する
         distance = Vector3.Distance(transform.position,
             target.transform.position);//距離を計算
@@ -77,33 +79,6 @@ public class dtc_flog : MonoBehaviour
     t3.transform.position);//距離を計算
         distance4 = Vector3.Distance(transform.position,
     t4.transform.position);//距離を計算
-
-        //rda = Vector3.Distance(transform.position,
-        //    rootdistanceA.transform.position);
-        //rdb = Vector3.Distance(transform.position,
-        //    rootdistanceB.transform.position);
-        //rdc = Vector3.Distance(transform.position,
-        //    rootdistanceC.transform.position);
-
-        //if (rta == false)
-        //{
-        //    agent.isStopped = false;
-        //    agent.SetDestination(rootA.transform.position);
-        //}
-        //if (rtb == true)
-        //{
-        //    agent.isStopped = false;
-        //    agent.SetDestination(rootB.transform.position);
-
-        //}
-        //if (rtc == true)
-        //{
-        //    agent.isStopped = false;
-        //    agent.SetDestination(rootC.transform.position);
-  
-        //}
-
-
         //距離が1なら
         if (distance < 1)
         {
