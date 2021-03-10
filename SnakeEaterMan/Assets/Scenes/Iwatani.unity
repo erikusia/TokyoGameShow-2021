@@ -730,6 +730,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 4077802070879889512}
+    - target: {fileID: 3361751868060631032, guid: fcf2b797dd7291d468b614f6cb66cda5,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3361751868060631033, guid: fcf2b797dd7291d468b614f6cb66cda5,
         type: 3}
       propertyPath: m_RootOrder

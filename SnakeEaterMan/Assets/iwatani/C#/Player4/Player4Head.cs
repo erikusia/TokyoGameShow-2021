@@ -25,7 +25,9 @@ public class Player4Head : MonoBehaviour
         if (hit == true)
         {
             hitCount += Time.deltaTime;
-            if (hitCount >= 1)
+            gameObject.transform.root.GetComponent<Player4Move>().m_walk /= 2;
+            gameObject.transform.root.GetComponent<Player4Move>().m_dash /= 2;
+            if (hitCount >= 2)
             {
                 hit = false;
             }
@@ -64,6 +66,12 @@ public class Player4Head : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        if (collision.gameObject.tag == "flog" && hit == false)
+        {
+            hit = true;
+            gameObject.transform.root.GetComponent<Player4Move>().dashTime += 1;
         }
     }
 }
