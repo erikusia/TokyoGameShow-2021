@@ -11,24 +11,35 @@ public class check_camera : MonoBehaviour
 
     void Start()
     {
-        //cam = GetComponent<Camera>();
-        //   Debug.Log(cam);
-        //kusaaa = GetComponent<GameObject>();
     }
     void Update()
     {
+    
     }
     void OnTriggerEnter(Collider other)
     {
-        if (GameObject.FindWithTag("ksua"))
+        //    if (GameObject.FindWithTag("Player1") || GameObject.FindWithTag("Player2") ||
+        //GameObject.FindWithTag("Player3") || GameObject.FindWithTag("Player4"))
+        //    {
+
+        //    }
+
+        if (GameObject.Find("KUSAS"))
         {
+            Debug.Log("これは草");
+            Debug.Log(tag);
             in_cam = true;
+            if (in_cam == true)
+            {
+                //xレイヤーを除く
+                cam.cullingMask &= ~(1 << 8);
+            }
+
         }
-        if (in_cam == true)
-        {
-            //xレイヤーを除く
-            cam.cullingMask &= ~(1 << 8);
-        }
+        //if (GameObject.Find("root_ALL"))
+        //{
+        //    Debug.Log("これは箱");
+        //}
     }
 
     void OnTriggerExit(Collider ot)
@@ -39,6 +50,5 @@ public class check_camera : MonoBehaviour
             //全てのレイヤーを有効にする
             cam.cullingMask = -1;
         }
-
     }
 }

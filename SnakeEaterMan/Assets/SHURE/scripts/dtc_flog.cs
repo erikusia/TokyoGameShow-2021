@@ -31,19 +31,19 @@ public class dtc_flog : MonoBehaviour
     private float distance2;
     private float distance3;
     private float distance4;
-
-    //public bool rta = false;
-    //public bool rtb = false;
-    //public bool rtc = false;
-
     //リスポーン    
     [SerializeField]
     private GameObject spawnpoint;
 
+    private float flogx;
+    private float flogy;
+    private float flogz;
+
+
     float deathCout = 0;
     private bool deathflag = false;
     private GameObject flogpos;
-
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -64,10 +64,10 @@ public class dtc_flog : MonoBehaviour
                 nextIndex = 0;
             }
         }
-
     }
     void Update()
     {
+   
         //インデックスに応じた目的地に設定する
         agent.destination = ROOT[nextIndex].transform.position;
         //二者間の距離を計算してfloat 一定値に行かなければ追跡する
@@ -87,7 +87,7 @@ public class dtc_flog : MonoBehaviour
             agent.destination = t3.transform.position;
             agent.destination = t4.transform.position;
             spawnpoint.GetComponent<Collider>().enabled = false;
-
+            
             if (GameObject.FindWithTag("head1"))
             {
                 spawnpoint.GetComponent<Collider>().enabled = false;
@@ -112,18 +112,22 @@ public class dtc_flog : MonoBehaviour
         //死亡フラグがtrueなら
         if (deathflag == true)
         {
-            spawnpoint.GetComponent<Renderer>().material = materials[1];
+            //ランダムスポーン場所
+            flogx = Random.Range(-30.0f, 30.0f);
+            flogy = Random.Range(0.0f, 0.0f);
+            flogz = Random.Range(-30.0f, 30.0f);
             Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
+            flogpos.transform.localPosition = new Vector3(flogx, flogy, flogz);//Quaternion.identity);
+            flogpos.GetComponent<Renderer>().material = materials[1];
 
-            flogpos.transform.localPosition = spawnpoint.transform.localPosition;
-
+           // flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
         }
         //死亡カウントが６より大きいなら
         if (deathCout > 6)
         {
             Debug.Log("復活");
-            spawnpoint.GetComponent<Renderer>().material = materials[0];
+            flogpos.GetComponent<Renderer>().material = materials[0];
             spawnpoint.GetComponent<Collider>().enabled = true;
             deathCout = 0;
             deathflag = false;

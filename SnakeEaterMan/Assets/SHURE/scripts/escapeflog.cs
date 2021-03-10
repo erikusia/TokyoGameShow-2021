@@ -115,7 +115,8 @@ public class escapeflog : MonoBehaviour
             flog.GetComponent<Collider>().enabled = true;
             deathCout = 0;
             deathflag = false;
-            //flog.GetComponent<Renderer>().material = materials[Random.Range(0, 1)];
+            //flog.GetComponent<Renderer>().material =
+            ////materials[Random.Range(0, 1)];
         }
     }
 
