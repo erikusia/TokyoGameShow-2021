@@ -336,6 +336,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61526756}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &80679736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3372164869529106154, guid: 89bd58cb976d9c747aa9e5bcc9cc9cc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 392427716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &81184236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1173,7 @@ GameObject:
   - component: {fileID: 281038870}
   m_Layer: 0
   m_Name: Sphere7
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1316,7 +1322,7 @@ GameObject:
   - component: {fileID: 328229404}
   m_Layer: 0
   m_Name: Sphere0
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1840,7 +1846,7 @@ GameObject:
   - component: {fileID: 539907749}
   m_Layer: 0
   m_Name: Sphere1
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1995,7 +2001,7 @@ GameObject:
   - component: {fileID: 576428569}
   m_Layer: 0
   m_Name: Sphere3
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2969,6 +2975,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994843676}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1058599759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2813337734670994771, guid: c9eaaa13aac3b39418304ba59f5d6cfe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1166515943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1066541344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 961076715096788350, guid: d4cdfc72fc5a00e4d9b09b1a38df6999,
@@ -3079,6 +3091,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084372664}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1113076147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7743935868447367159, guid: d6fa4a3ab84bf1f43afefef87ef19652,
+    type: 3}
+  m_PrefabInstance: {fileID: 786354249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154923240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,7 +3114,7 @@ GameObject:
   - component: {fileID: 1154923242}
   m_Layer: 0
   m_Name: Sphere6
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3436,7 +3454,7 @@ GameObject:
   - component: {fileID: 1252592472}
   m_Layer: 0
   m_Name: Sphere5
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4480,6 +4498,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1976720839}
+    - target: {fileID: 961076716041405936, guid: d4cdfc72fc5a00e4d9b09b1a38df6999,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1113076147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4cdfc72fc5a00e4d9b09b1a38df6999, type: 3}
 --- !u!1 &1680141739
@@ -4499,7 +4522,7 @@ GameObject:
   - component: {fileID: 1680141741}
   m_Layer: 0
   m_Name: Sphere4
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4631,6 +4654,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680141739}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1719159177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3885207108652375825, guid: a8eec5eb7ec4e3c44a4382e9a43aeee3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761873532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1757765624 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6731356430258438679, guid: 0569fa1664420a24a920e576b8c0b929,
@@ -4789,25 +4818,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1920520048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3794600755565202001, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
-    type: 3}
-  m_PrefabInstance: {fileID: 5034743408783946189}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1920520049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920520048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef610bf4a10f0648ab24b46c2a79a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 1757765624}
 --- !u!20 &1976720839 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6391082419653821023, guid: 1b338c0bcfc362b4980747dd95de01ac,
@@ -4831,7 +4841,7 @@ GameObject:
   - component: {fileID: 1986889494}
   m_Layer: 0
   m_Name: Sphere2
-  m_TagString: Untagged
+  m_TagString: flog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5282,6 +5292,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2631570834379429920, guid: dbda33b540cb4cf4bad8a9d1e8a321f9,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1719159177}
     - target: {fileID: 2631570834678568163, guid: dbda33b540cb4cf4bad8a9d1e8a321f9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5594,6 +5609,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6088416085369297159, guid: 64c621e63c04d3444adbf8a3d055b8d2,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1058599759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64c621e63c04d3444adbf8a3d055b8d2, type: 3}
 --- !u!1001 &5034743408783946189
@@ -5603,6 +5623,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1920520049, guid: d65c14a0dc763a443b0b95f1b3a8c6de, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1757765624}
+    - target: {fileID: 3794600754518502115, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 80679736}
     - target: {fileID: 3794600755313044136, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
         type: 3}
       propertyPath: m_Name
@@ -5663,11 +5692,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3794600756074024688, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c58f3cd78b75dc14c9523079d235a7e9, type: 2}
     - target: {fileID: 3794600756173291682, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
         type: 3}
       propertyPath: m_AnchorMax.y

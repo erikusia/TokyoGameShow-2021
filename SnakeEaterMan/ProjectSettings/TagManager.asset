@@ -22,6 +22,7 @@ TagManager:
   - Player4
   - ksua
   - rA
+  - flog
   layers:
   - Default
   - TransparentFX

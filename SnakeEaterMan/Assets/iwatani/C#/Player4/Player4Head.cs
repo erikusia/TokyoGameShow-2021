@@ -25,10 +25,12 @@ public class Player4Head : MonoBehaviour
         if (hit == true)
         {
             hitCount += Time.deltaTime;
-            gameObject.transform.root.GetComponent<Player4Move>().m_walk /= 2;
-            gameObject.transform.root.GetComponent<Player4Move>().m_dash /= 2;
+            gameObject.transform.root.GetComponent<Player4Move>().m_walk = 20;
+            gameObject.transform.root.GetComponent<Player4Move>().m_dash = 14;
             if (hitCount >= 2)
             {
+                gameObject.transform.root.GetComponent<Player4Move>().m_walk = 10;
+                gameObject.transform.root.GetComponent<Player4Move>().m_dash = 7;
                 hit = false;
             }
         }

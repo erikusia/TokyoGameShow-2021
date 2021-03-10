@@ -66,26 +66,26 @@ public class escapeflog : MonoBehaviour
         }
 
         //距離が１以上の時、プレイヤーの近くで停止する
-        if (distance < 1 || distance2 < 1 || distance3 < 1 || distance4 < 1)
-        {
-            agent.destination = target.transform.position;
-            agent.destination = t2.transform.position;
-            agent.destination = t3.transform.position;
-            agent.destination = t4.transform.position;
-            if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
-             GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
-            {
-                flog.GetComponent<Collider>().enabled = false;
+        //if (distance < 1 || distance2 < 1 || distance3 < 1 || distance4 < 1)
+        //{
+        //    agent.destination = target.transform.position;
+        //    agent.destination = t2.transform.position;
+        //    agent.destination = t3.transform.position;
+        //    agent.destination = t4.transform.position;
+        //    if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
+        //     GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
+        //    {
+        //        flog.GetComponent<Collider>().enabled = false;
 
-                deathflag = true;
-            }
-        }
-        flog.GetComponent<Collider>().enabled = false;
+        //        deathflag = true;
+        //    }
+        //}
+        //flog.GetComponent<Collider>().enabled = false;
 
         if (deathflag == true)
         {
             flog.GetComponent<Renderer>().material = materials[1];
-            Debug.Log("死んだよ");
+            //Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
 
             flogpos.transform.localPosition = runpoint.transform.localPosition;
@@ -103,4 +103,13 @@ public class escapeflog : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "head1" || col.gameObject.tag == "head2" ||
+            col.gameObject.tag == "head3" || col.gameObject.tag == "head4")
+        {
+            flog.GetComponent<Collider>().enabled = false;
+            deathflag = true;
+        }
+    }
 }

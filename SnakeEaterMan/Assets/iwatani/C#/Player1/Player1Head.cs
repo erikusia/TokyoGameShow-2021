@@ -25,10 +25,12 @@ public class Player1Head : MonoBehaviour
         if (hit == true)
         {
             hitCount += Time.deltaTime;
-            gameObject.transform.root.GetComponent<Player1Move>().m_walk /= 2;
-            gameObject.transform.root.GetComponent<Player1Move>().m_dash /= 2;
+            gameObject.transform.root.GetComponent<Player1Move>().m_walk = 20;
+            gameObject.transform.root.GetComponent<Player1Move>().m_dash = 14;
             if (hitCount >= 2)
             {
+                gameObject.transform.root.GetComponent<Player1Move>().m_walk = 10;
+                gameObject.transform.root.GetComponent<Player1Move>().m_dash = 7;
                 hit = false;
             }
         }
@@ -70,7 +72,12 @@ public class Player1Head : MonoBehaviour
             }
         }
 
-        if(collision.gameObject.tag=="flog"&&hit==false)
+        if (collision.gameObject.tag != "Player1")
+        {
+            Debug.Log(collision.gameObject.tag);
+        }
+
+        if (collision.gameObject.tag=="flog"&&hit==false)
         {
             hit = true;
             gameObject.transform.root.GetComponent<Player1Move>().dashTime += 1;

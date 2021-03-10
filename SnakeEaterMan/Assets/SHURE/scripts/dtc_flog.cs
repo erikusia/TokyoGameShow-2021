@@ -67,6 +67,16 @@ public class dtc_flog : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag=="head1"|| col.gameObject.tag == "head2"||
+            col.gameObject.tag == "head3"|| col.gameObject.tag == "head4")
+        {
+            spawnpoint.GetComponent<Collider>().enabled = false;
+            deathflag = true;
+        }
+    }
     void Update()
     {
 
@@ -82,22 +92,22 @@ public class dtc_flog : MonoBehaviour
         distance4 = Vector3.Distance(transform.position,
     t4.transform.position);//距離を計算
         //距離が1なら
-        if (distance < 1||distance2<1||distance3<1||distance4<1)
-        {
-            agent.destination = target.transform.position;
-            agent.destination = t2.transform.position;
-            agent.destination = t3.transform.position;
-            agent.destination = t4.transform.position;
-            spawnpoint.GetComponent<Collider>().enabled = false;
+        //if (distance < 1||distance2<1||distance3<1||distance4<1)
+        //{
+        //    agent.destination = target.transform.position;
+        //    agent.destination = t2.transform.position;
+        //    agent.destination = t3.transform.position;
+        //    agent.destination = t4.transform.position;
+        //    spawnpoint.GetComponent<Collider>().enabled = false;
 
-            if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
-                GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
-            {
-                spawnpoint.GetComponent<Collider>().enabled = false;
-                deathflag = true;
-            }
+        //    if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
+        //        GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
+        //    {
+        //        spawnpoint.GetComponent<Collider>().enabled = false;
+        //        deathflag = true;
+        //    }
 
-        }
+        //}
         //死亡フラグがtrueなら
         if (deathflag == true)
         {
