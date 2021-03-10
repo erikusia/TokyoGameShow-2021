@@ -23,6 +23,17 @@ TagManager:
   - ksua
   - rA
   - flog
+  - kusa2
+  - kusa3
+  - kusa4
+  - kusa5
+  - kusa6
+  - kusa7
+  - kusa8
+  - kusa9
+  - kusa10
+  - kusa11
+  - kusa12
   layers:
   - Default
   - TransparentFX
@@ -33,17 +44,17 @@ TagManager:
   - 
   - 
   - Mask
-  - test
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - mask2
+  - mask3
+  - mask4
+  - mask5
+  - mask6
+  - mask7
+  - mask8
+  - mask9
+  - mask10
+  - mask11
+  - mask12
   - 
   - 
   - 

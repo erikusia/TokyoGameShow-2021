@@ -18,18 +18,96 @@ public class check_camera : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject)
-        {   Debug.Log(tag);
-            if (GameObject.FindWithTag("ksua"))
-            {
-                Debug.Log("これは草");
-                in_cam = true;
-                if (in_cam == true)
-                {
-                    //xレイヤーを除く
-                    cam.cullingMask &= ~(1 << 8);
+  //          Debug.Log(tag);
 
-                }
+//            Debug.Log("これはテスト");
+
+        //草の個体ごとにレイヤー分け（いくつか同じのを使っている
+        if (other.CompareTag("ksua"))
+        {
+            //Debug.Log(tag);
+            //Debug.Log("これは草");
+            in_cam = true;
+            if (in_cam == true)
+            {
+                //xレイヤーを除く
+                cam.cullingMask &= ~(1 << 8);
+            }
+        }
+        if (other.CompareTag("kusa2"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 9);}
+        }
+        if (other.CompareTag("kusa3"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 10);
+            }
+        }
+        if (other.CompareTag("kusa4"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 11);
+            }
+        }
+        if (other.CompareTag("kusa5"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 12);
+            }
+        }
+        if (other.CompareTag("kusa6"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 13);
+            }
+        }
+        if (other.CompareTag("kusa7"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 14);
+            }
+        }
+        if (other.CompareTag("kusa8"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 15);
+            }
+        }
+        if (other.CompareTag("kusa9"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 16);
+            }
+        }
+        if (other.CompareTag("kusa10"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 17);
+            }
+        }
+        if (other.CompareTag("kusa11"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 18);
+            }
+        }
+        if (other.CompareTag("kusa12"))
+        {
+            in_cam = true; if (in_cam == true)
+            {//xレイヤーを除く
+                cam.cullingMask &= ~(1 << 19);
             }
         }
     }
