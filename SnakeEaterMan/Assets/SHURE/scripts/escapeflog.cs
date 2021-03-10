@@ -49,51 +49,34 @@ public class escapeflog : MonoBehaviour
         if (distance < 10)
         {
             agent.destination = agent.destination - (target.transform.position - agent.destination);
-            if (distance2 < 10)//|| distance3 > 20 || distance4 > 20)
-            {
-                agent.destination = agent.destination - (t2.transform.position - agent.destination);
-            }
-            if (distance3 < 10)//|| distance2 > 20 || distance4 > 20)
-            {
-                agent.destination = agent.destination - (t3.transform.position - agent.destination);
-            }
-            if (distance4 < 10)//|| distance2 > 20 || distance3 > 20)
-            {
-                agent.destination = agent.destination - (t4.transform.position - agent.destination);
-            }
         }
         else
         { agent.destination = runpoint.transform.position; }
-
+        if (distance2 <10)//|| distance3 > 20 || distance4 > 20)
+        {
+            agent.destination = agent.destination - (t2.transform.position - agent.destination);
+        }
+        if (distance3 > 10)//|| distance2 > 20 || distance4 > 20)
+        {
+            agent.destination = agent.destination - (t3.transform.position - agent.destination);
+        }
+        if (distance4 > 10)//|| distance2 > 20 || distance3 > 20)
+        {
+            agent.destination = agent.destination - (t4.transform.position - agent.destination);
+        }
 
         //距離が１以上の時、プレイヤーの近くで停止する
-        if (distance < 1)
+        if (distance < 1 || distance2 < 1 || distance3 < 1 || distance4 < 1)
         {
             agent.destination = target.transform.position;
             agent.destination = t2.transform.position;
             agent.destination = t3.transform.position;
             agent.destination = t4.transform.position;
-            if (GameObject.FindWithTag("head1"))
+            if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
+             GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
             {
                 flog.GetComponent<Collider>().enabled = false;
 
-                deathflag = true;
-            }
-            if (GameObject.FindWithTag("head2"))
-            {
-                flog.GetComponent<Collider>().enabled = false;
-
-                deathflag = true;
-            }
-            if (GameObject.FindWithTag("head3"))
-            {
-                flog.GetComponent<Collider>().enabled = false;
-
-                deathflag = true;
-            }
-            if (GameObject.FindWithTag("head4"))
-            {
-                flog.GetComponent<Collider>().enabled = false;
                 deathflag = true;
             }
         }

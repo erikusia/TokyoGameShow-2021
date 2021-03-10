@@ -43,7 +43,7 @@ public class dtc_flog : MonoBehaviour
     float deathCout = 0;
     private bool deathflag = false;
     private GameObject flogpos;
-    
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -51,6 +51,8 @@ public class dtc_flog : MonoBehaviour
         //agent.autoBraking = false;
         agent.destination = ROOT[nextIndex].transform.position;
     }
+    //移動するときに別のルートを取るため、
+    //ｒAに当たったらlengthから-1して+して次に向かう
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "rA")
@@ -67,7 +69,7 @@ public class dtc_flog : MonoBehaviour
     }
     void Update()
     {
-   
+
         //インデックスに応じた目的地に設定する
         agent.destination = ROOT[nextIndex].transform.position;
         //二者間の距離を計算してfloat 一定値に行かなければ追跡する
@@ -80,34 +82,21 @@ public class dtc_flog : MonoBehaviour
         distance4 = Vector3.Distance(transform.position,
     t4.transform.position);//距離を計算
         //距離が1なら
-        if (distance < 1)
+        if (distance < 1||distance2<1||distance3<1||distance4<1)
         {
             agent.destination = target.transform.position;
             agent.destination = t2.transform.position;
             agent.destination = t3.transform.position;
             agent.destination = t4.transform.position;
             spawnpoint.GetComponent<Collider>().enabled = false;
-            
-            if (GameObject.FindWithTag("head1"))
+
+            if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
+                GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
             {
                 spawnpoint.GetComponent<Collider>().enabled = false;
                 deathflag = true;
             }
-            if (GameObject.FindWithTag("head2"))
-            {
-                spawnpoint.GetComponent<Collider>().enabled = false;
-                deathflag = true;
-            }
-            if (GameObject.FindWithTag("head3"))
-            {
-                spawnpoint.GetComponent<Collider>().enabled = false;
-                deathflag = true;
-            }
-            if (GameObject.FindWithTag("head4"))
-            {
-                spawnpoint.GetComponent<Collider>().enabled = false;
-                deathflag = true;
-            }
+
         }
         //死亡フラグがtrueなら
         if (deathflag == true)
@@ -116,22 +105,21 @@ public class dtc_flog : MonoBehaviour
             flogx = Random.Range(-30.0f, 30.0f);
             flogy = Random.Range(0.0f, 0.0f);
             flogz = Random.Range(-30.0f, 30.0f);
-            Debug.Log("死んだよ");
+         //   Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
             flogpos.transform.localPosition = new Vector3(flogx, flogy, flogz);//Quaternion.identity);
             flogpos.GetComponent<Renderer>().material = materials[1];
 
-           // flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
+            // flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
         }
         //死亡カウントが６より大きいなら
         if (deathCout > 6)
         {
-            Debug.Log("復活");
+           // Debug.Log("復活");
             flogpos.GetComponent<Renderer>().material = materials[0];
             spawnpoint.GetComponent<Collider>().enabled = true;
             deathCout = 0;
             deathflag = false;
-            //flog.GetComponent<Renderer>().material = materials[Random.Range(0, 1)];
         }
         //Debug.Log(agent.velocity.magnitude);//移動量
     }

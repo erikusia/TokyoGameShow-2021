@@ -7,39 +7,31 @@ public class check_camera : MonoBehaviour
     //草のカメラ
     public Camera cam;
     bool in_cam = true;
-
-
+    //
     void Start()
     {
     }
     void Update()
     {
-    
+
     }
     void OnTriggerEnter(Collider other)
     {
-        //    if (GameObject.FindWithTag("Player1") || GameObject.FindWithTag("Player2") ||
-        //GameObject.FindWithTag("Player3") || GameObject.FindWithTag("Player4"))
-        //    {
 
-        //    }
-
-        if (GameObject.Find("KUSAS"))
-        {
-            Debug.Log("これは草");
-            Debug.Log(tag);
-            in_cam = true;
-            if (in_cam == true)
+        if (other.gameObject)
+        {   Debug.Log(tag);
+            if (GameObject.FindWithTag("ksua"))
             {
-                //xレイヤーを除く
-                cam.cullingMask &= ~(1 << 8);
-            }
+                Debug.Log("これは草");
+                in_cam = true;
+                if (in_cam == true)
+                {
+                    //xレイヤーを除く
+                    cam.cullingMask &= ~(1 << 8);
 
+                }
+            }
         }
-        //if (GameObject.Find("root_ALL"))
-        //{
-        //    Debug.Log("これは箱");
-        //}
     }
 
     void OnTriggerExit(Collider ot)
