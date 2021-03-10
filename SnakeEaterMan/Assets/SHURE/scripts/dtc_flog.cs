@@ -73,7 +73,7 @@ public class dtc_flog : MonoBehaviour
         if (col.gameObject.tag=="head1"|| col.gameObject.tag == "head2"||
             col.gameObject.tag == "head3"|| col.gameObject.tag == "head4")
         {
-            spawnpoint.GetComponent<Collider>().enabled = false;
+            flogpos.GetComponent<Collider>().enabled = false;
             deathflag = true;
         }
     }
@@ -127,7 +127,7 @@ public class dtc_flog : MonoBehaviour
         {
            // Debug.Log("復活");
             flogpos.GetComponent<Renderer>().material = materials[0];
-            spawnpoint.GetComponent<Collider>().enabled = true;
+            flogpos.GetComponent<Collider>().enabled = true;
             deathCout = 0;
             deathflag = false;
         }

@@ -56,11 +56,11 @@ public class escapeflog : MonoBehaviour
         {
             agent.destination = agent.destination - (t2.transform.position - agent.destination);
         }
-        if (distance3 > 10)//|| distance2 > 20 || distance4 > 20)
+        if (distance3 < 10)//|| distance2 > 20 || distance4 > 20)
         {
             agent.destination = agent.destination - (t3.transform.position - agent.destination);
         }
-        if (distance4 > 10)//|| distance2 > 20 || distance3 > 20)
+        if (distance4 < 10)//|| distance2 > 20 || distance3 > 20)
         {
             agent.destination = agent.destination - (t4.transform.position - agent.destination);
         }
