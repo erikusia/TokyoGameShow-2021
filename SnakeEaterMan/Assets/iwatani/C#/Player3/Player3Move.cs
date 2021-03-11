@@ -58,7 +58,8 @@ public class Player3Move : MonoBehaviour
             transform.localRotation = Quaternion.Slerp(myTransform.localRotation, targetRotation, Time.deltaTime * m_rotato);
         }
 
-        if (Input.GetKey("joystick button 3"))
+        if (Input.GetKey("joystick button 0") || Input.GetKey("joystick button 1") ||
+            Input.GetKey("joystick button 2") || Input.GetKey("joystick button 3"))
         {
             waitTime = 0;
             dash = true;
