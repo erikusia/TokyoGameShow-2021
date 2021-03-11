@@ -24,7 +24,7 @@ public class Snake_Ai : MonoBehaviour
 
     public float distance;//距離
 
-    private bool inArea = false;
+    // private bool inArea = false;
     ////リスポーン用
     //bool deathFlag = false;
     //float respawnCount = 0;
@@ -39,26 +39,38 @@ public class Snake_Ai : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         HEBI_AI = transform.root.gameObject;
         agent.destination = enemys[nextIndex].transform.position;
-        nextIndex = Random.Range(0, 14);
+        nextIndex = Random.Range(0,2);
+
+    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+        
+    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("tail"))
+        // collision.gameObject.CompareTag("Player3")||)
+        {
+            nextIndex = Random.Range(0, 2);
+        }
     }
     void Update()
     {
-            
-        distance = Vector3.Distance(transform.position,
-    enemys[nextIndex].transform.position);//距f離を計算
+        distance = Vector3.Distance(transform.position, enemys[nextIndex].transform.position);//
         if (distance > 1)
         {
             agent.destination = enemys[nextIndex].transform.position;
         }
+
         //索敵範囲に敵がいて、かつ敵達もいるなら、agentの方向はその敵の咆哮に向かう
-        if (inArea == true && enemys[nextIndex].activeInHierarchy == true)
+        if (enemys[nextIndex].activeInHierarchy == true)
         {
             agent.destination = enemys[nextIndex].transform.position;
         }
     }
     //void OnCollisionEnter(Collision col)
     //{
-  
+
     //    //if (col.gameObject.name == "flogs")
     //    //{
     //    //}
