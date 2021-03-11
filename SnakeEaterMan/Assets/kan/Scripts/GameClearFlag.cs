@@ -9,7 +9,7 @@ public class GameClearFlag : MonoBehaviour
     public static string winner = "none";
     //検索用リスト
     private List<GameObject> matName = new List<GameObject>();
-    private string instanceName = " (Instance)";
+    private string instanceName = "(Instance)";
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +27,10 @@ public class GameClearFlag : MonoBehaviour
         //プレイヤー分のマテリアルが白か透明ではなかった場合誰かがクリアしている.
         foreach(var mat in matName)
         {
-            if (mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name != "White"+instanceName &&
-                mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name != "Transparency"+ instanceName)
+            //if (mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Replace(instanceName,"") != "White "&&
+            //    mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Replace(instanceName,"") != "Transparency ")
+            if (!mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Contains("White")&&
+                !mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Contains("Transparency"))
             {
                 //シーン遷移
                 //Debug.Log("GameClear " + mat.name + " が勝ち");

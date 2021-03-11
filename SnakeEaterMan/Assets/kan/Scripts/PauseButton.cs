@@ -46,6 +46,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 1"))
                 {
+                    Time.timeScale = 1;
                     titleButton.GetComponent<TitleButton>().OnClick();
                 }
                 break;
@@ -56,6 +57,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 1"))
                 {
+                    Time.timeScale = 1;
                     gameEndButton.GetComponent<GameEndButton>().OnClick();
                 }
                 break;
