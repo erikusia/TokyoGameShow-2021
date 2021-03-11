@@ -64,7 +64,6 @@ public class escapeflog : MonoBehaviour
         {
             agent.destination = agent.destination - (t4.transform.position - agent.destination);
         }
-
         //距離が１以上の時、プレイヤーの近くで停止する
         //if (distance < 1 || distance2 < 1 || distance3 < 1 || distance4 < 1)
         //{
@@ -76,7 +75,6 @@ public class escapeflog : MonoBehaviour
         //     GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
         //    {
         //        flog.GetComponent<Collider>().enabled = false;
-
         //        deathflag = true;
         //    }
         //}
