@@ -10,7 +10,6 @@ TagManager:
   - DashP4
   - tail
   - head
-  - player
   - movePointsA
   - head1
   - head2
@@ -34,6 +33,7 @@ TagManager:
   - kusa10
   - kusa11
   - kusa12
+  - AI_Head
   layers:
   - Default
   - TransparentFX
