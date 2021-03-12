@@ -12,7 +12,7 @@ public class hebi_ai : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        nextIndex = Random.Range(0, 2);
+        nextIndex = Random.Range(0, 3);
     }
     void Update()
     {
