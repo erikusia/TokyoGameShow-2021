@@ -46,7 +46,7 @@ public class Player1Head : MonoBehaviour
             if (hitCount >= 2)
             {
                 gameObject.transform.root.GetComponent<Player1Move>().m_walk = 10;
-                gameObject.transform.root.GetComponent<Player1Move>().m_dash = 7;
+                gameObject.transform.root.GetComponent<Player1Move>().m_dash = 5;
                 colorText.text = "";
                 hit = false;
 
