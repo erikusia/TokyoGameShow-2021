@@ -45,6 +45,7 @@ public class Snake_AI_Head : MonoBehaviour
             //Debug.Log(collision.gameObject.tag);
             hit = true;
             string tailMatName = collision.gameObject.GetComponent<Renderer>().material.name;
+            tailMaterial = collision.gameObject.GetComponent<Renderer>().material;
             //Debug.Log("相手のしっぽ:" + tailMaterial.name);
             for (int i = 0; i < gameObjects.Length; i++)
             {

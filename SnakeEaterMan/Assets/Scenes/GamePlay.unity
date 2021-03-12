@@ -4417,6 +4417,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3704287212187157601, guid: 402ed5afb19eff24786ecadd21bd11d7,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 919419362}
     - target: {fileID: 4031130785004637465, guid: 402ed5afb19eff24786ecadd21bd11d7,
         type: 3}
       propertyPath: enemys.Array.data[0]
