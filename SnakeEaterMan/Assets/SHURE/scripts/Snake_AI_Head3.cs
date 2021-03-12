@@ -25,12 +25,12 @@ public class Snake_AI_Head3 : MonoBehaviour
         if (hit == true)
         {
             hitCount += Time.deltaTime;
-            gameObject.transform.root.GetComponent<Player3Move>().m_walk = 20;
-            gameObject.transform.root.GetComponent<Player3Move>().m_dash = 14;
+            //gameObject.transform.root.GetComponent<Player3Move>().m_walk = 20;
+            //gameObject.transform.root.GetComponent<Player3Move>().m_dash = 14;
             if (hitCount >= 2)
             {
-                gameObject.transform.root.GetComponent<Player3Move>().m_walk = 10;
-                gameObject.transform.root.GetComponent<Player3Move>().m_dash = 7;
+                //gameObject.transform.root.GetComponent<Player3Move>().m_walk = 10;
+                // gameObject.transform.root.GetComponent<Player3Move>().m_dash = 7;
                 hit = false;
             }
         }
@@ -60,7 +60,7 @@ public class Snake_AI_Head3 : MonoBehaviour
                 if (objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6)) && hit)
                 {
                     Debug.Log("持ってる色だよ");
-                    gameObject.transform.root.GetComponent<Player3Move>().dashTime += 1;
+                    //gameObject.transform.root.GetComponent<Player3Move>().dashTime += 1;
                     break;
                 }
                 else if (white.Equals(objectName.Substring(0, 5), StringComparison.Ordinal) && hit)
@@ -75,7 +75,7 @@ public class Snake_AI_Head3 : MonoBehaviour
         if (collision.gameObject.tag == "flog" && hit == false)
         {
             hit = true;
-            gameObject.transform.root.GetComponent<Player3Move>().dashTime += 1;
+            // gameObject.transform.root.GetComponent<Player3Move>().dashTime += 1;
         }
     }
 }

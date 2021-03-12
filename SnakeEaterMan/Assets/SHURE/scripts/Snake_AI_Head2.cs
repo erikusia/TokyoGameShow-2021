@@ -29,8 +29,8 @@ public class Snake_AI_Head2 : MonoBehaviour
             //gameObject.transform.root.GetComponent<Player2Move>().m_dash = 14;
             if (hitCount >= 2)
             {
-                //gameObject.transform.root.GetComponent<Player2Move>().m_walk = 10;
-                //gameObject.transform.root.GetComponent<Player2Move>().m_dash = 7;
+                //    gameObject.transform.root.GetComponent<Player2Move>().m_walk = 10;
+                //  gameObject.transform.root.GetComponent<Player2Move>().m_dash = 7;
                 hit = false;
             }
         }
@@ -58,14 +58,14 @@ public class Snake_AI_Head2 : MonoBehaviour
                 //Debug.Log(objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6)));
                 if (objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6)) && hit)
                 {
-                  //  Debug.Log("持ってる色だよ");
-                    //gameObject.transform.root.GetComponent<Player2Move>().dashTime += 1;
+                    //  Debug.Log("持ってる色だよ");
+                   // gameObject.transform.root.GetComponent<Player2Move>().dashTime += 1;
                     break;
                 }
                 else if (white.Equals(objectName.Substring(0, 5), StringComparison.Ordinal) && hit)
                 {
-                   // Debug.Log("持ってない色だよ");
-                    gameObjects[i].GetComponent<Renderer>().material = tailMaterial;
+                    // Debug.Log("持ってない色だよ");
+                    //gameObjects[i].GetComponent<Renderer>().material = tailMaterial;
                     break;
                 }
             }
