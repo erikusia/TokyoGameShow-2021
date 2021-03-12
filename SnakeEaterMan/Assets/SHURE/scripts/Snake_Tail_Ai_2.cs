@@ -27,7 +27,7 @@ public class Snake_Tail_Ai_2 : MonoBehaviour
     {
         if (deathFlag == true)
         {
-            Debug.Log("Player1Dead");
+            //Debug.Log("Player1Dead");
             //リスポーンするまでの時間計測
             respawnCount += Time.deltaTime;
             //リスポーンする場所に移動

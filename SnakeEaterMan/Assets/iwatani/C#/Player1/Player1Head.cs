@@ -109,10 +109,10 @@ public class Player1Head : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag != "Player1")
-        {
-            Debug.Log(collision.gameObject.tag);
-        }
+        //if (collision.gameObject.tag != "Player1")
+        //{
+        //    //Debug.Log(collision.gameObject.tag);
+        //}
 
         if (collision.gameObject.tag=="flog"&&hitDef==false)
         {
