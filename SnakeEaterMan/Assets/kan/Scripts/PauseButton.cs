@@ -44,7 +44,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = true;
                 gameEndButton.interactable = false;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 1"))
+                if (Input.GetKey("joystick button 3"))
                 {
                     Time.timeScale = 1;
                     titleButton.GetComponent<TitleButton>().OnClick();
@@ -55,7 +55,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = false;
                 gameEndButton.interactable = true;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 1"))
+                if (Input.GetKey("joystick button 3"))
                 {
                     Time.timeScale = 1;
                     gameEndButton.GetComponent<GameEndButton>().OnClick();

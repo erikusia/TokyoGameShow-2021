@@ -81,5 +81,11 @@ public class Snake_Tail : MonoBehaviour
                 }
             }
         }
+
+        //プレイヤーように追加
+        if (collision.gameObject.tag == "head1" && deathFlag)
+        {
+            GameResult.snakeEatCount++;
+        }
     }
 }

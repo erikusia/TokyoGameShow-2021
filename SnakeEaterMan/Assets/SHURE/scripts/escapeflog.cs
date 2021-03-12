@@ -108,6 +108,10 @@ public class escapeflog : MonoBehaviour
         {
             flog.GetComponent<Collider>().enabled = false;
             deathflag = true;
+
+            //プレイヤーように追加
+            if (col.gameObject.tag == "head1")
+                GameResult.flogEatCount++;
         }
     }
 }
