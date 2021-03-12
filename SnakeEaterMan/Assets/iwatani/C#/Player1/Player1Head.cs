@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player1Head : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class Player1Head : MonoBehaviour
     private GameObject[] gameObjects;
     private Material tailMaterial;
     bool hit = false;
+    bool hitDef=false;
     float hitCount = 0;
+    float hitCount2 = 0;
+    [SerializeField]
+    private Text colorText;
+    private string tailMatName;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +28,28 @@ public class Player1Head : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hitDef == true)
+        {
+            hitCount2 += Time.deltaTime;
+            if (hitCount2 >= 0.5)
+            {
+                hitDef = false;
+            }
+        }
+        else hitCount2 = 0;
         if (hit == true)
         {
             hitCount += Time.deltaTime;
             gameObject.transform.root.GetComponent<Player1Move>().m_walk = 20;
             gameObject.transform.root.GetComponent<Player1Move>().m_dash = 14;
+
             if (hitCount >= 2)
             {
                 gameObject.transform.root.GetComponent<Player1Move>().m_walk = 10;
                 gameObject.transform.root.GetComponent<Player1Move>().m_dash = 7;
+                colorText.text = "";
                 hit = false;
+
             }
         }
         else hitCount = 0;
@@ -40,17 +58,36 @@ public class Player1Head : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //しっぽにぶつかったら
-        if (collision.gameObject.tag == "tail" && hit == false)
+        if (collision.gameObject.tag == "tail"&& hitDef==false)
         {
-            //Debug.Log(collision.gameObject.tag);
-            
+            hitCount = 0;
+            hit = true;
+            hitDef = true;
             tailMaterial = collision.gameObject.GetComponent<Renderer>().material;
-            string tailMatName= tailMaterial.name;
+            tailMatName= tailMaterial.name;
 
-            
+            switch (tailMatName.Substring(0, 1))
+            {
+                case "B":
+                    colorText.text = "青色を食べた";
+                    colorText.color = new Color(0, 0, 255);
+                    break;
+                case "G":
+                    colorText.text = "緑色を食べた";
+                    colorText.color = new Color(0, 255, 0);
+                    break;
+                case "R":
+                    colorText.text = "赤色を食べた";
+                    colorText.color = new Color(255, 0, 0);
+                    break;
+                case "Y":
+                    colorText.text = "黄色を食べた";
+                    colorText.color = new Color(255, 255, 0);
+                    break;
+            }
+
             for (int i = 0; i < gameObjects.Length; i++)
             {
-                hit = true;
                 string objectName = gameObjects[i].GetComponent<Renderer>().material.name;
                 string white = materials[4].name;
 
@@ -77,7 +114,7 @@ public class Player1Head : MonoBehaviour
             Debug.Log(collision.gameObject.tag);
         }
 
-        if (collision.gameObject.tag=="flog"&&hit==false)
+        if (collision.gameObject.tag=="flog"&&hitDef==false)
         {
             hit = true;
             gameObject.transform.root.GetComponent<Player1Move>().dashTime += 1;
