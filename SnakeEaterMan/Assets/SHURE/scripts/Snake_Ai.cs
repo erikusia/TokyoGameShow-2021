@@ -39,7 +39,7 @@ public class Snake_Ai : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         HEBI_AI = transform.root.gameObject;
         agent.destination = enemys[nextIndex].transform.position;
-        nextIndex = Random.Range(0,2);
+      //  nextIndex = Random.Range(0,2);
 
     }
     //private void OnCollisionEnter(Collision collision)

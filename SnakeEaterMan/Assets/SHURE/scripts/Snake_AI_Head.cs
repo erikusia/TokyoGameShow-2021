@@ -64,7 +64,7 @@ public class Snake_AI_Head : MonoBehaviour
                 }
                 else if (white.Equals(objectName.Substring(0, 5), StringComparison.Ordinal) && hit)
                 {
-                  //  Debug.Log("持ってない色だよ");
+                    //  Debug.Log("持ってない色だよ");
                     gameObjects[i].GetComponent<Renderer>().material = tailMaterial;
                     break;
                 }
@@ -74,7 +74,7 @@ public class Snake_AI_Head : MonoBehaviour
         if (collision.gameObject.tag == "flog" && hit == false)
         {
             hit = true;
-          //  gameObject.transform.root.GetComponent<Player4Move>().dashTime += 1;
+            //  gameObject.transform.root.GetComponent<Player4Move>().dashTime += 1;
         }
     }
 }
