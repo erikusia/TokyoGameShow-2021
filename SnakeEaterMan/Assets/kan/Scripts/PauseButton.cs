@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public class PauseButton : MonoBehaviour
 {
     [SerializeField]
+    private Button returnButton;
+    [SerializeField]
     private Button titleButton;
     [SerializeField]
     private Button gameEndButton;
 
-    int buttonCount = 0;
+    private float inputTime;
+
+    private int buttonCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        inputTime = 0;
     }
 
     // Update is called once per frame
@@ -29,10 +33,18 @@ public class PauseButton : MonoBehaviour
     void ButtonInput()
     {
         float y = Input.GetAxis("Vertical1");
-        if (y > 0)
+        if(Time.frameCount % 13 == 0)
+        {
+            if (y > 0)
+                buttonCount--;
+            if (y < 0)
+                buttonCount++;
+        }
+
+        if (buttonCount < 0)
             buttonCount = 0;
-        if (y < 0)
-            buttonCount = 1;
+        else if (buttonCount > 2)
+            buttonCount = 2;
     }
 
     void OnButton(int count)
@@ -41,8 +53,19 @@ public class PauseButton : MonoBehaviour
         {
             //タイトルボタンを表示
             case 0:
+                returnButton.interactable = true;
+                gameEndButton.interactable = titleButton.interactable = false;
+                //Bボタン押したら
+                if (Input.GetKey("joystick button 3"))
+                {
+                    Time.timeScale = 1;
+                    Destroy(gameObject);
+                }
+                break;
+            //タイトルボタンを表示
+            case 1:
                 titleButton.interactable = true;
-                gameEndButton.interactable = false;
+                gameEndButton.interactable = returnButton.interactable = false;
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
@@ -51,8 +74,8 @@ public class PauseButton : MonoBehaviour
                 }
                 break;
             //エンディングボタンを表示
-            case 1:
-                titleButton.interactable = false;
+            case 2:
+                titleButton.interactable = returnButton.interactable = false;
                 gameEndButton.interactable = true;
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
