@@ -11,6 +11,8 @@ public class GameResult : MonoBehaviour
     void Start()
     {
         gameObject.GetComponent<Text>().text = "食べたカエルの数 : " + flogEatCount.ToString() + "\n" + "食べたヘビの数 : " + snakeEatCount.ToString();
+        snakeEatCount = 0;
+        flogEatCount = 0;
     }
 
     // Update is called once per frame
