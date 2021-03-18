@@ -9,7 +9,6 @@ public class GameClearFlag : MonoBehaviour
     public static string winner = "none";
     //検索用リスト
     private List<GameObject> matName = new List<GameObject>();
-    private string instanceName = "(Instance)";
     // Start is called before the first frame update
     void Start()
     {

@@ -12,13 +12,11 @@ public class PauseButton : MonoBehaviour
     [SerializeField]
     private Button gameEndButton;
 
-    private float inputTime;
 
     private int buttonCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-        inputTime = 0;
     }
 
     // Update is called once per frame

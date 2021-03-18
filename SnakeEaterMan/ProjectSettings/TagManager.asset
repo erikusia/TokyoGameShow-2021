@@ -34,6 +34,7 @@ TagManager:
   - kusa11
   - kusa12
   - AI_Head
+  - Item
   layers:
   - Default
   - TransparentFX
