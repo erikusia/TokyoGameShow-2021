@@ -12,7 +12,7 @@ public class Player1Head : MonoBehaviour
     [SerializeField]
     private GameObject[] gameObjects;
     private Material tailMaterial;
-    bool hit = false;
+    public bool hit = false;
     bool hitDef=false;
     float hitCount = 0;
     float hitCount2 = 0;

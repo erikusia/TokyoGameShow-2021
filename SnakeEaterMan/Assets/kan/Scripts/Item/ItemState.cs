@@ -15,9 +15,7 @@ public class ItemState : MonoBehaviour
 
         None
     }
-
     private ItemStatus itemState;
-
     public ItemStatus GetStatus
     {
         get { return itemState; }
@@ -31,6 +29,20 @@ public class ItemState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //アイテムを持っていなければ早期Return
+        if (!ItemCheck(itemState))
+            return;
+
+        //Lボタンを押したら
+        if (Input.GetKey("joystick button 4"))
+        {
+            Debug.Log(itemState.ToString() + " : Itemを使った");
+
+            //Sound
+            GetComponent<PlayerSE>().PlayerSoundName = itemState.ToString();
+
+            itemState = ItemStatus.None;
+        }
     }
 
     private void OnCollisionEnter(Collision col)
@@ -39,7 +51,21 @@ public class ItemState : MonoBehaviour
         {
             itemState = col.gameObject.GetComponent<ItemFruits>().GetStatus;
             //食べるSEを鳴らす
-            GetComponent<PlayerSE>().PlayerSoundState = PlayerSE.PlaySoundFlag.Eat;
+            GetComponent<PlayerSE>().PlayerSoundName = "Eating";
+
+            GetComponent<Player1Head>().hit = true;
         }
+    }
+    /// <summary>
+    /// アイテムを持っているかどうか
+    /// </summary>
+    /// <param name="status"></param>
+    private bool ItemCheck(ItemStatus status)
+    {
+        if(status != ItemStatus.None)
+        {
+            return true;
+        }
+        return false;
     }
 }

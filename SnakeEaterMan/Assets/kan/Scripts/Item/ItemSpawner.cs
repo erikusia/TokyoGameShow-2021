@@ -35,7 +35,7 @@ public class ItemSpawner : MonoBehaviour
             {
                 spawnTimes[i] += Time.deltaTime;
 
-                if (spawnTimes[i] > 5.0f)
+                if (spawnTimes[i] > 1.0f)
                 {
                     items[i] = Instantiate(itemObj,positions[i],Quaternion.identity);
                     spawnTimes[i] = 0.0f;

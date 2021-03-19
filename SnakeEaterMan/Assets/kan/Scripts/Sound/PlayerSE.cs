@@ -4,39 +4,43 @@ using UnityEngine;
 
 public class PlayerSE : MonoBehaviour
 {
-    public enum PlaySoundFlag
-    {
-        Dash,
-        Eat,
-        GetItem,
-        PlasDash,
-        Paralysis,
-        MiniMap,
-        Thunder,
-        Debuff,
-        ColorShuffle,
-        OneColor,
-        Stamina,
 
-        None,
-    }
-    private PlaySoundFlag soundState;
-    public PlaySoundFlag PlayerSoundState
+        //Dash,
+        //Eating,
+        //GetItem,
+        //DashItem,
+        //Paralysis,
+        //MiniMap,
+        //Thunder,
+        //Debuff,
+        //ColorShuffle,
+        //OneColor,
+        //Stamina,
+        //None,
+
+    private string soundName;
+    public string PlayerSoundName
     {
-        set { soundState = value; }
-        get { return soundState; }
+        set { soundName = value; }
+        get { return soundName; }
     }
-    //食べる
+
     [SerializeField]
-    private AudioClip eatSE;
+    private AudioClip[] SE;
+    private Dictionary<string, AudioClip> SEList;
     private AudioSource audioSource;
-    // Start is called before the first frame update
+
     void Start()
     {
+        soundName = "None";
         audioSource = GetComponent<AudioSource>();
+        SEList = new Dictionary<string, AudioClip>();
+        for(int i = 0;i < SE.Length;++i)
+        {
+            SEList.Add(SE[i].name, SE[i]);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlaySE();
@@ -44,13 +48,10 @@ public class PlayerSE : MonoBehaviour
 
     void PlaySE()
     {
-        switch(soundState)
-        {
-            case PlaySoundFlag.Eat:
-                audioSource.PlayOneShot(eatSE);
-                break;
-        }
 
-        soundState = PlaySoundFlag.None;
+        if(soundName != "None")
+            audioSource.PlayOneShot(SEList[soundName]);
+
+        soundName = "None";
     }
 }
