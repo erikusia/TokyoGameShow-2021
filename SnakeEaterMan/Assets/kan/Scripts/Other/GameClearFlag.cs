@@ -9,6 +9,11 @@ public class GameClearFlag : MonoBehaviour
     public static string winner = "none";
     //検索用リスト
     private List<GameObject> matName = new List<GameObject>();
+
+    [SerializeField]
+    private AudioClip clips;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +22,7 @@ public class GameClearFlag : MonoBehaviour
         matName.Insert(1, GameObject.FindWithTag("Player2"));
         matName.Insert(2, GameObject.FindWithTag("Player3"));
         matName.Insert(3, GameObject.FindWithTag("Player4"));
+		audioSource = GetComponent<AudioSource>();
     }
     //GameObject.FindWithTag("Player2").transform.Find("body1").GetComponent<MeshRenderer>().material
     // Update is called once per frame
@@ -34,6 +40,7 @@ public class GameClearFlag : MonoBehaviour
                 //シーン遷移
                 //Debug.Log("GameClear " + mat.name + " が勝ち");
                 winner = mat.name;
+                audioSource.PlayOneShot(clips);
                 SceneManager.LoadScene("End");
             }
         }

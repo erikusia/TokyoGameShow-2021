@@ -78,7 +78,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
-                    audioSource.PlayOneShot(clip);
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     Destroy(gameObject);
                 }
@@ -90,7 +90,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
-                    audioSource.PlayOneShot(clip);
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     titleButton.GetComponent<TitleButton>().OnClick();
                 }
@@ -102,7 +102,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
-                    audioSource.PlayOneShot(clip);
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     gameEndButton.GetComponent<GameEndButton>().OnClick();
                 }
