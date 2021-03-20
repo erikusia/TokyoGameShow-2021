@@ -26,17 +26,17 @@ public class ItemFruits : MonoBehaviour
         //60%
         if (probability <= 60)
         {
-            status = (ItemState.ItemStatus)Random.Range(0, 3);
+            status = (ItemState.ItemStatus)Random.Range(0, 2);
         }
         //30%
-        else if(probability > 60 && probability <= 90)
+        else if(probability > 60 && probability <= 85)
         {//カミナリ
-            status = (ItemState.ItemStatus)3;
+            status = (ItemState.ItemStatus)2;
         }
         //10%
         else
         {//鈍足・カラーシャッフル         
-            status = (ItemState.ItemStatus)Random.Range(4, 6);
+            status = (ItemState.ItemStatus)Random.Range(3, 5);
         }
     }
 

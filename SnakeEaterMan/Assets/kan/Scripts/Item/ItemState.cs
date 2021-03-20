@@ -8,7 +8,7 @@ public class ItemState : MonoBehaviour
     {
         DashItem,       //1+ダッシュ
         Paralysis,      //麻痺
-        MiniMap,        //ミニマップ表示
+        //MiniMap,        //ミニマップ表示
         Thunder,        //カミナリ
         Debuff,         //デバフ
         ColorShuffle,   //カラーシャッフル
@@ -20,6 +20,8 @@ public class ItemState : MonoBehaviour
     {
         get { return itemState; }
     }
+    [Header("ItemUIの中のItemImageを入れて"),SerializeField]
+    private GameObject itemUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,13 +38,16 @@ public class ItemState : MonoBehaviour
         //Lボタンを押したら
         if (Input.GetKey("joystick button 4"))
         {
-            Debug.Log(itemState.ToString() + " : Itemを使った");
+            //Debug.Log(itemState.ToString() + " : Itemを使った");
 
             //Sound
             GetComponent<PlayerSE>().PlayerSoundName = itemState.ToString();
 
             itemState = ItemStatus.None;
         }
+
+        //ItemUI表示
+        itemUI.GetComponent<ItemUI>().itemImageName = itemState.ToString();
     }
 
     private void OnCollisionEnter(Collision col)
@@ -51,7 +56,7 @@ public class ItemState : MonoBehaviour
         {
             itemState = col.gameObject.GetComponent<ItemFruits>().GetStatus;
             //食べるSEを鳴らす
-            GetComponent<PlayerSE>().PlayerSoundName = "Eating";
+            GetComponent<PlayerSE>().PlayerSoundName = "GetItem";
 
             GetComponent<Player1Head>().hit = true;
         }
