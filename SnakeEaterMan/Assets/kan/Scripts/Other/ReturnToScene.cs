@@ -10,11 +10,16 @@ public class ReturnToScene : MonoBehaviour
     [SerializeField]
     private Button gameEndButton;
 
-    int buttonCount = 0;
+    [SerializeField]
+    private AudioClip clip;
+    private AudioSource audioSource;
+
+    private int buttonCount = 0;
+    private int beforeCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,18 @@ public class ReturnToScene : MonoBehaviour
             buttonCount = 0;
         if (y < 0)
             buttonCount = 1;
+
+        if (IsOperation())
+            audioSource.PlayOneShot(clip);
+
+        beforeCount = buttonCount;
+    }
+
+    bool IsOperation()
+    {
+        if (beforeCount != buttonCount)
+            return true;
+        return false;
     }
 
     void OnButton(int count)
@@ -46,6 +63,7 @@ public class ReturnToScene : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
+                    audioSource.PlayOneShot(clip);
                     titleButton.GetComponent<TitleButton>().OnClick();
                 }
                 break;
@@ -56,6 +74,7 @@ public class ReturnToScene : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
+                    audioSource.PlayOneShot(clip);
                     gameEndButton.GetComponent<GameEndButton>().OnClick();
                 }
                 break;

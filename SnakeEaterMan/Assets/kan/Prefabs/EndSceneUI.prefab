@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleButton: {fileID: 2178728046825653092}
   gameEndButton: {fileID: 2178728045457309059}
+  clip: {fileID: 0}
 --- !u!1 &2178728045457309056
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,3 +650,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e0f24dc51644d43a07f5a2c0773b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: b4fc958e11b0fbd44a97062e4dccb0b7, type: 3}

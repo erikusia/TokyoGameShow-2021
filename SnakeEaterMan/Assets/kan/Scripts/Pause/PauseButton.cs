@@ -12,11 +12,16 @@ public class PauseButton : MonoBehaviour
     [SerializeField]
     private Button gameEndButton;
 
+    [SerializeField]
+    private AudioClip clip;
+    private AudioSource audioSource;
 
     private int buttonCount = 0;
+    private int beforeCount = 0;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,18 +36,35 @@ public class PauseButton : MonoBehaviour
     void ButtonInput()
     {
         float y = Input.GetAxis("Vertical1");
-        if(Time.frameCount % 13 == 0)
+        if(Time.frameCount % 15 == 0)
         {
             if (y > 0)
+            {
                 buttonCount--;
+
+            }
             if (y < 0)
+            {
                 buttonCount++;
+            }
         }
 
         if (buttonCount < 0)
             buttonCount = 0;
         else if (buttonCount > 2)
             buttonCount = 2;
+
+        if(IsOperation())
+            audioSource.PlayOneShot(clip);
+
+        beforeCount = buttonCount;
+    }
+
+    bool IsOperation()
+    {
+        if (beforeCount != buttonCount)
+            return true;
+        return false;
     }
 
     void OnButton(int count)
@@ -56,6 +78,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     Destroy(gameObject);
                 }
@@ -67,6 +90,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     titleButton.GetComponent<TitleButton>().OnClick();
                 }
@@ -78,6 +102,7 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetKey("joystick button 3"))
                 {
+                    //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
                     gameEndButton.GetComponent<GameEndButton>().OnClick();
                 }
