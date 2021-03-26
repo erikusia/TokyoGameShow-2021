@@ -4,7 +4,7 @@ using UnityEngine;
 public class Snake_Ai : MonoBehaviour
 {
     private GameObject hebiai;
-    private int nextIndex = 0;
+    //private int nextIndex = 0;
     void Start()
     {
         hebiai = gameObject.transform.root.gameObject;

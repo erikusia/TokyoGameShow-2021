@@ -91,18 +91,20 @@ public class Player1Head : MonoBehaviour
                 string objectName = gameObjects[i].GetComponent<Renderer>().material.name;
                 string white = materials[4].name;
 
-                Debug.Log("自分のしっぽ:" + objectName);
-                Debug.Log("相手のしっぽ:" + tailMaterial);
-                Debug.Log(objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6)));
+                // Debug.Log("自分のしっぽ:" + objectName);
+                // Debug.Log("相手のしっぽ:" + tailMaterial);
+                // Debug.Log(objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6)));
                 if (objectName.Substring(0,6).Equals(tailMatName.Substring(0, 6), StringComparison.Ordinal) && hit)
                 {
-                    Debug.Log("持ってる色だよ");
+                    //Debug.Log("持ってる色だよ");
+                    GetComponent<PlayerSE>().PlayerSoundName = "Eating";
                     gameObject.transform.root.GetComponent<Player1Move>().dashTime += 1;
                     break;
                 }           
                 else if (white.Equals(objectName.Substring(0,5), StringComparison.Ordinal) && hit)
                 {
-                    Debug.Log("持ってない色だよ");
+                    // Debug.Log("持ってない色だよ");
+                    GetComponent<PlayerSE>().PlayerSoundName = "OneColor";
                     gameObjects[i].GetComponent<Renderer>().material = tailMaterial;
                     break;
                 }
@@ -118,6 +120,7 @@ public class Player1Head : MonoBehaviour
         {
             hit = true;
             gameObject.transform.root.GetComponent<Player1Move>().dashTime += 1;
+            GetComponent<PlayerSE>().PlayerSoundName = "Eating";
         }
     }
 }

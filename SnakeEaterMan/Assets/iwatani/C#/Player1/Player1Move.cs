@@ -21,6 +21,7 @@ public class Player1Move : MonoBehaviour
     public float dashTime = 1;
     float waitTime = 0;
 
+    private bool dashSound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +67,11 @@ public class Player1Move : MonoBehaviour
         }
         else dash = false;
 
+        //ダッシュしたら音を鳴らす
+        PlayDashSound();
+        //ダッシュアイテムを使ったらdashTimeを増やす
+        UseDashItem();
+
         if (dash == true && dashTime > 0)
         {
             m_speed = m_dash;
@@ -90,10 +96,37 @@ public class Player1Move : MonoBehaviour
                     {
                         dashTime = 1;
                         waitTime = 0;
+
+                        //スタミナ回復SE
+                        GetComponentInChildren<PlayerSE>().PlayerSoundName = "Stamina";
                     }
                 }
             }
             m_speed = m_walk;
+        }
+    }
+
+    void PlayDashSound()
+    {
+        if (dash && !dashSound)
+        {
+            //いったん消しとく
+            //GetComponentInChildren<PlayerSE>().PlayerSoundName = "Dash";
+        }
+
+        if (dash)
+            dashSound = true;
+        else
+            dashSound = false;
+        
+    }
+
+    void UseDashItem()
+    {
+        if (GetComponentInChildren<PlayerStatus>().PlayerState == "DashItem")
+        {
+            dashTime += 1;
+            GetComponentInChildren<PlayerStatus>().PlayerState = "None";
         }
     }
 }
