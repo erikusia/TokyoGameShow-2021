@@ -5,9 +5,9 @@ using UnityEngine;
 public class ItemFruits : MonoBehaviour
 {
     // Start is called before the first frame update
-    private ItemState.ItemStatus status;
+    private string status;
     private bool isDead;
-    public ItemState.ItemStatus GetStatus
+    public string GetStatus
     {
         get { return status; }
     }
@@ -21,22 +21,30 @@ public class ItemFruits : MonoBehaviour
 
         //確率
         int probability = Random.Range(1, 101);
-        status = ItemState.ItemStatus.None;
+        status = "None";
 
         //60%
         if (probability <= 60)
         {
-            status = (ItemState.ItemStatus)Random.Range(0, 2);
+            int r = Random.Range(0, 2);
+            if (r == 0)
+                status = "DashItem";
+            else
+                status = "Paralysis";
         }
         //30%
         else if(probability > 60 && probability <= 85)
         {//カミナリ
-            status = (ItemState.ItemStatus)2;
+            status = "Thunder";
         }
         //10%
         else
         {//鈍足・カラーシャッフル         
-            status = (ItemState.ItemStatus)Random.Range(3, 5);
+            int r = Random.Range(0, 2);
+            if (r == 0)
+                status = "Debuff";
+            else
+                status = "ColorShuffle";
         }
     }
 

@@ -10,7 +10,7 @@ public class GameClearFlag : MonoBehaviour
     //検索用リスト
     private List<GameObject> matName = new List<GameObject>();
 
-    [SerializeField]
+    [Header("Scene.mp3"),SerializeField]
     private AudioClip clips;
     private AudioSource audioSource;
 
