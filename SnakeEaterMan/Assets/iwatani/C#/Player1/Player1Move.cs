@@ -123,10 +123,10 @@ public class Player1Move : MonoBehaviour
 
     void UseDashItem()
     {
-        if (GetComponentInChildren<PlayerStatus>().PlayerState == "DashItem")
-        {
-            dashTime += 1;
-            GetComponentInChildren<PlayerStatus>().PlayerState = "None";
-        }
+        //if (GetComponentInChildren<PlayerStatus>().PlayerState == "DashItem")
+        //{
+        //    dashTime += 1;
+        //    GetComponentInChildren<PlayerStatus>().PlayerState = "None";
+        //}
     }
 }
