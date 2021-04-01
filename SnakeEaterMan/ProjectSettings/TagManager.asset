@@ -4,37 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DashP1
-  - DashP2
-  - DashP3
-  - DashP4
-  - tail
-  - head
-  - movePointsA
-  - head1
-  - head2
-  - head3
-  - head4
-  - Player1
-  - Player2
-  - Player3
-  - Player4
-  - ksua
-  - rA
-  - flog
-  - kusa2
-  - kusa3
-  - kusa4
-  - kusa5
-  - kusa6
-  - kusa7
-  - kusa8
-  - kusa9
-  - kusa10
-  - kusa11
-  - kusa12
-  - AI_Head
-  - Item
+  - Shootable
   layers:
   - Default
   - TransparentFX
@@ -44,18 +14,18 @@ TagManager:
   - UI
   - 
   - 
-  - Mask
-  - mask2
-  - mask3
-  - mask4
-  - mask5
-  - mask6
-  - mask7
-  - mask8
-  - mask9
-  - mask10
-  - mask11
-  - mask12
+  - Lighting
+  - Ground
+  - Postprocessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -69,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fire
+    uniqueID: 3804908061
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
