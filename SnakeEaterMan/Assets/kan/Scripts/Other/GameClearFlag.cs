@@ -19,9 +19,9 @@ public class GameClearFlag : MonoBehaviour
     {
         //プレイヤー分の名前をリストに入れる
         matName.Insert(0, GameObject.FindWithTag("Player1"));
-        matName.Insert(1, GameObject.FindWithTag("Player2"));
-        matName.Insert(2, GameObject.FindWithTag("Player3"));
-        matName.Insert(3, GameObject.FindWithTag("Player4"));
+        //matName.Insert(1, GameObject.FindWithTag("Player2"));
+        //matName.Insert(2, GameObject.FindWithTag("Player3"));
+        //matName.Insert(3, GameObject.FindWithTag("Player4"));
 		audioSource = GetComponent<AudioSource>();
     }
     //GameObject.FindWithTag("Player2").transform.Find("body1").GetComponent<MeshRenderer>().material
@@ -32,10 +32,10 @@ public class GameClearFlag : MonoBehaviour
         //プレイヤー分のマテリアルが白か透明ではなかった場合誰かがクリアしている.
         foreach(var mat in matName)
         {
-            //if (mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Replace(instanceName,"") != "White "&&
-            //    mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Replace(instanceName,"") != "Transparency ")
-            if (!mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Contains("White")&&
-                !mat.transform.Find("body1").GetComponent<MeshRenderer>().material.name.Contains("Transparency"))
+
+            //mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White");
+            if (!mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White") &&
+                !mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("Transparency") )
             {
                 //シーン遷移
                 //Debug.Log("GameClear " + mat.name + " が勝ち");

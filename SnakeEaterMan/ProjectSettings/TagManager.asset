@@ -5,6 +5,35 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - movePointsA
+  - kusa8
+  - ksua
+  - rA
+  - flog
+  - kusa5
+  - kusa4
+  - kusa7
+  - kusa10
+  - kusa2
+  - DashP1
+  - kusa11
+  - kusa6
+  - kusa3
+  - DashP2
+  - kusa9
+  - kusa12
+  - Player4
+  - head4
+  - tail
+  - DashP4
+  - Player2
+  - head2
+  - Player1
+  - head1
+  - Player3
+  - head3
+  - DashP3
+  - Item
   layers:
   - Default
   - TransparentFX
