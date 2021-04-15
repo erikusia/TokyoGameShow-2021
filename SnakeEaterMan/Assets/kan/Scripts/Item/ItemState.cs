@@ -31,10 +31,13 @@ public class ItemState : MonoBehaviour
     private GameObject itemUI;
     private int playerNumber;
     private string controllerName;
+
+    private float paralysisCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        itemState = "Debuff";
+        itemState = "Paralysis";
         playerNumber = gameObject.transform.root.GetComponent<PlayerMove>().playerNumber;
         controllerName = "L1_" + playerNumber.ToString();
     }
@@ -55,8 +58,13 @@ public class ItemState : MonoBehaviour
             if(itemState == "DashItem")
                 GetComponent<PlayerStatus>().PlayerState = itemState;
 
+            if (itemState == "Paralysis")
+                item = itemState;
+
             itemState = "None";
         }
+        //麻痺攻撃
+        AttackParalysis(1.5f);
 
         //ItemUI表示
         itemUI.GetComponent<ItemUI>().itemImageName = itemState;
@@ -70,7 +78,32 @@ public class ItemState : MonoBehaviour
             //食べるSEを鳴らす
             GetComponent<PlayerSE>().PlayerSoundName = "GetItem";
             //アイテム食べたら遅くなる
-            //GetComponent<Player1Head>().hit = true;
+            //GetComponent<PlayerHead>().hit = true;
+        }
+
+        if (col.gameObject.tag == "tail" && item == "Paralysis")
+        {
+            var g = col.gameObject.transform.root.gameObject;
+            g.transform.Find("group1").GetComponentInChildren<PlayerStatus>().PlayerState = "Paralysis";
+        }
+    }
+    /// <summary>
+    /// 麻痺の攻撃
+    /// </summary>
+    /// <param name="count">なん秒判定を出すか</param>
+    private void AttackParalysis(float count)
+    {
+        if (paralysisCount < count && item == "Paralysis")
+        {
+            itemState = "Paralysis";
+        }
+        else if (paralysisCount > count)
+        {
+            itemState = item = "None";
+        }
+        if (item == "Paralysis")
+        {
+            paralysisCount = paralysisCount + Time.deltaTime;
         }
     }
 }

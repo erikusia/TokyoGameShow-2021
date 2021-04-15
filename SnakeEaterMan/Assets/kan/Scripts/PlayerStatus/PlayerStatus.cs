@@ -29,6 +29,12 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(status == "Paralysis" || status == "Thunder" || status == "Debuff")
+        {
+            //あしおそ
+            GetComponent<PlayerHead>().hit = true;
+            //Debug.Log(gameObject.transform.root.gameObject.name + status);
+            status = "None";
+        }        
     }
 }

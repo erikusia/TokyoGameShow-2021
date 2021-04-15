@@ -14,9 +14,9 @@ public class PlayerStatusManager : MonoBehaviour
     private GameObject player4;
 
     private List<GameObject> list = new List<GameObject>();
-    int[] number = new int[4];
+    int[] number;
 
-    int maxRank = 0;
+    int maxRank = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +27,20 @@ public class PlayerStatusManager : MonoBehaviour
         list.Add(player4);
     }
 
-    // Update is called once per frame
+    // Update is called once per frame       Debug.Log("");
     void Update()
     {
+        number = new int[4];
         //ランキング
         for (int i = 0; i < list.Count; i++)
         {
             for (int j = 0; j < 4; j++)
             {
-                if (list[i].GetComponent<PlayerColor>().materialsName[j] != "White")
+                if (list[i].GetComponent<PlayerColor>().materialsName[j] != "White" &&
+                    list[i].GetComponent<PlayerColor>().materialsName[j] != "Transparency")
+                {
                     number[i]++;
+                }
             }
         }
         for (int i = 0; i < list.Count; i++)
@@ -80,17 +84,31 @@ public class PlayerStatusManager : MonoBehaviour
     /// </summary>
     private void Debuff(int num)
     {
-        if (number[num] == maxRank)
+        for(int i = 0;i < number.Length;i++)
         {
-            list[num].transform.Find("group1").GetComponentInChildren<PlayerStatus>().PlayerState = "Debuff";
+            if (number[i] == maxRank && i != num)
+            {
+                list[i].transform.Find("group1").GetComponentInChildren<PlayerStatus>().PlayerState = "Debuff";
+            }
         }
-        Debug.Log(list[num].name);
     }
     /// <summary>
-    /// カラーシャッフルのステータス付与
+    /// カラーシャッフル
     /// </summary>
     private void ColorShuffle(int num)
     {
-
+        List<GameObject> l = new List<GameObject>();
+        l.Add(player1);
+        l.Add(player2);
+        l.Add(player3);
+        l.Add(player4);
+        int i = 0;
+        while (i < 4)
+        {
+            int r = Random.Range(0, l.Count);
+            list[i].GetComponent<PlayerColor>().ChangeColor(l[r].GetComponent<PlayerColor>().materialsName);
+            l.Remove(l[r]);
+            i++;
+        }
     }
 }

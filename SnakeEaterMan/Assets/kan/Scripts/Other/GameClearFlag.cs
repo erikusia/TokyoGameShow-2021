@@ -18,11 +18,16 @@ public class GameClearFlag : MonoBehaviour
     void Start()
     {
         //プレイヤー分の名前をリストに入れる
-        matName.Insert(0, GameObject.FindWithTag("Player1"));
+        for(int i = 1;i < 5;i++)
+        {
+            string pName = "Player" + i.ToString();
+            matName.Insert(i-1, GameObject.Find(pName));
+        }
+
         //matName.Insert(1, GameObject.FindWithTag("Player2"));
         //matName.Insert(2, GameObject.FindWithTag("Player3"));
         //matName.Insert(3, GameObject.FindWithTag("Player4"));
-		audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
     //GameObject.FindWithTag("Player2").transform.Find("body1").GetComponent<MeshRenderer>().material
     // Update is called once per frame
@@ -32,13 +37,11 @@ public class GameClearFlag : MonoBehaviour
         //プレイヤー分のマテリアルが白か透明ではなかった場合誰かがクリアしている.
         foreach(var mat in matName)
         {
-
-            //mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White");
             if (!mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White") &&
                 !mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("Transparency") )
             {
                 //シーン遷移
-                //Debug.Log("GameClear " + mat.name + " が勝ち");
+                Debug.Log("GameClear " + mat.name + " が勝ち");
                 winner = mat.name;
                 audioSource.PlayOneShot(clips);
                 SceneManager.LoadScene("End");

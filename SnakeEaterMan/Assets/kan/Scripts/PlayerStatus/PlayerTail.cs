@@ -72,7 +72,7 @@ public class PlayerTail : MonoBehaviour
         //頭がぶつかったら
         if (collision.gameObject.tag == "head1")
         {
-            Debug.Log("当たった");
+            //Debug.Log("当たった");
             for (int i = 0; i < gameObjects.Length - 2; i++)
             {
                 gameObjects[i].GetComponent<Renderer>().material = gameObjects[i + 1].GetComponent<Renderer>().material;
