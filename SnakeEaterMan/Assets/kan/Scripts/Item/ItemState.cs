@@ -8,7 +8,7 @@ public class ItemState : MonoBehaviour
     //{
     //    DashItem,       //1+ダッシュ
     //    Paralysis,      //麻痺
-    //    //MiniMap,        //ミニマップ表示
+    //    //MiniMap,      //ミニマップ表示
     //    Thunder,        //カミナリ
     //    Debuff,         //デバフ
     //    ColorShuffle,   //カラーシャッフル
@@ -16,31 +16,44 @@ public class ItemState : MonoBehaviour
     //    None
     //}
     private string itemState;
+    private string item = "None";
     public string GetStatus
     {
         get { return itemState; }
         set { itemState = value; }
     }
+    public string GetItem
+    {
+        get { return item; }
+        set { item = value; }
+    }
     [Header("ItemUIの中のItemImageを入れて"),SerializeField]
     private GameObject itemUI;
+    private int playerNumber;
+    private string controllerName;
     // Start is called before the first frame update
     void Start()
     {
-        itemState = "None";
+        itemState = "Debuff";
+        playerNumber = gameObject.transform.root.GetComponent<PlayerMove>().playerNumber;
+        controllerName = "L1_" + playerNumber.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Lボタンを押したら
-        if (Input.GetKey("joystick button 4"))
+        if (Input.GetButtonDown(controllerName))
         {
             //Debug.Log(itemState.ToString() + " : Itemを使った");
 
             //Sound
             GetComponent<PlayerSE>().PlayerSoundName = itemState;
 
-            GetComponent<PlayerStatus>().PlayerState = itemState;
+            item = itemState;
+
+            if(itemState == "DashItem")
+                GetComponent<PlayerStatus>().PlayerState = itemState;
 
             itemState = "None";
         }
