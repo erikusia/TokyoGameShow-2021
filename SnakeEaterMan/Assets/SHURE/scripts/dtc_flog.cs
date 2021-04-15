@@ -83,7 +83,10 @@ public class dtc_flog : MonoBehaviour
     }
     void Update()
     {
-
+        float a = 0.25f;
+        Vector3 pos =transform.position;
+        pos.y = 0.25f;
+        transform.position = pos;
         //インデックスに応じた目的地に設定する
         agent.destination = ROOT[nextIndex].transform.position;
         //二者間の距離を計算してfloat 一定値に行かなければ追跡する
