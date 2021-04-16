@@ -46,6 +46,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerNumber == 0)
+            return;
+
         float x = Input.GetAxis(inputHorizontal);
         float z = Input.GetAxis(inputVertical);
         //トランスフォーム取得
@@ -70,8 +73,10 @@ public class PlayerMove : MonoBehaviour
             transform.localRotation = Quaternion.Slerp(myTransform.localRotation, targetRotation, Time.deltaTime * m_rotato);
         }
 
-        if (Input.GetKey("joystick button 0") || Input.GetKey("joystick button 1") ||
-            Input.GetKey("joystick button 2") || Input.GetKey("joystick button 3"))
+        
+        string s = "A" + playerNumber.ToString();
+
+        if (Input.GetButton(s))
         {
             waitTime = 0;
             dash = true;

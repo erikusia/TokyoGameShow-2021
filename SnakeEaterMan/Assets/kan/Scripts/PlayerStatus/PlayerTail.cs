@@ -11,7 +11,7 @@ public class PlayerTail : MonoBehaviour
     private GameObject[] gameObjects;
 
     //リスポーン用
-    bool deathFlag = false;
+    public bool deathFlag = false;
     float respawnCount = 0;
     [SerializeField]
     private GameObject spawnPoint;
