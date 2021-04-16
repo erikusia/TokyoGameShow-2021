@@ -8,7 +8,11 @@ public class dtc_flog : MonoBehaviour
     [SerializeField]
     private Material[] materials;
 
+    [SerializeField]
+    private GameObject[] FlogObj;
+
     private NavMeshAgent agent;//動くために必要な物4
+    public Transform runpoint;//リスポーン
 
     [SerializeField]
     private Transform[] ROOT;
@@ -40,7 +44,7 @@ public class dtc_flog : MonoBehaviour
     private float flogz;
 
 
-    float deathCout = 0;
+   public float deathCout = 0;
     private bool deathflag = false;
     private GameObject flogpos;
 
@@ -70,8 +74,8 @@ public class dtc_flog : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag=="head1"|| col.gameObject.tag == "head2"||
-            col.gameObject.tag == "head3"|| col.gameObject.tag == "head4")
+        if (col.gameObject.tag == "head1" || col.gameObject.tag == "head2" ||
+            col.gameObject.tag == "head3" || col.gameObject.tag == "head4")
         {
             flogpos.GetComponent<Collider>().enabled = false;
             deathflag = true;
@@ -84,7 +88,7 @@ public class dtc_flog : MonoBehaviour
     void Update()
     {
         float a = 0.25f;
-        Vector3 pos =transform.position;
+        Vector3 pos = transform.position;
         pos.y = 0.25f;
         transform.position = pos;
         //インデックスに応じた目的地に設定する
@@ -122,19 +126,30 @@ public class dtc_flog : MonoBehaviour
             flogx = Random.Range(-30.0f, 30.0f);
             flogy = Random.Range(0.0f, 0.0f);
             flogz = Random.Range(-30.0f, 30.0f);
-         //   Debug.Log("死んだよ");
+            //   Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
-            flogpos.transform.localPosition = new Vector3(flogx, flogy, flogz);//Quaternion.identity);
-            flogpos.GetComponent<Renderer>().material = materials[1];
+            flogpos.transform.localPosition = //runpoint.transform.localPosition;
+                new Vector3(flogx, flogy, flogz);//Quaternion.identity);
 
-            // flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
+            for (int i = 0; i < FlogObj.Length; i++)
+            {
+                FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[4];
+            }
+
+
+           //  flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
         }
         //死亡カウントが６より大きいなら
         if (deathCout > 6)
         {
-           // Debug.Log("復活");
+            Debug.Log("復活");
             flogpos.GetComponent<Renderer>().material = materials[0];
             flogpos.GetComponent<Collider>().enabled = true;
+          
+            for (int i = 0; i < FlogObj.Length; i++)
+            {
+                FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[i];
+            }
             deathCout = 0;
             deathflag = false;
         }

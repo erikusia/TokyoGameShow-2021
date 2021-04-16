@@ -86,7 +86,8 @@ public class escapeflog : MonoBehaviour
             //Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
 
-            flogpos.transform.localPosition = runpoint.transform.localPosition;
+            flogpos.transform.localPosition =
+                runpoint.transform.localPosition;
 
         }
         if (deathCout > 6)
