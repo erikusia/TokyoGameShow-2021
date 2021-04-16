@@ -13,6 +13,8 @@ public class HowToPlayer : MonoBehaviour
     public GUIStyleState styleState;
     private GUIStyle style;
     private bool isGUI;
+
+    private bool b = false;
     private void Awake()
     {
         Time.timeScale = 0;
@@ -37,13 +39,15 @@ public class HowToPlayer : MonoBehaviour
             {
                 int n = i + 1;
 
-                if (Input.GetButtonDown("A" + n.ToString()))
+                if (Input.GetButtonDown("A" + n.ToString()) && !b)
                 {
                     Time.timeScale = 1;
                     //Aiを使う
                     OnAI();
                     isPlayer[i] = false;
                     isGUI = true;
+                    b = true;
+                    Destroy(gameObject);
                 }
             }
         }
@@ -87,8 +91,12 @@ public class HowToPlayer : MonoBehaviour
         {
             if (isPlayer[i])
             {
-                style.normal = styleState;
-                GUI.Label(new Rect(100 * i, 20, 100, 50), (i + 1).ToString() + "Player準備完了、Aボタンでスタート", style);
+                if(!b)
+                {
+                    style.normal = styleState;
+                    GUI.Label(new Rect(100 * i, 20, 100, 50), (i + 1).ToString() + "Player準備完了、Aボタンでスタート", style);
+                }
+
             }
         }
     }
