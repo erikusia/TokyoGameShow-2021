@@ -7,9 +7,12 @@ public class check_camera : MonoBehaviour
     //草のカメラ
     public Camera cam;
     bool in_cam = true;
-    //
+    //メッシュ
+    MeshRenderer mr;
     void Start()
-    { }
+    {
+        mr = GetComponent<MeshRenderer>();
+    }
     void Update()
     { }
     void OnTriggerEnter(Collider other)
