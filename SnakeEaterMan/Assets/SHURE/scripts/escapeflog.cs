@@ -89,7 +89,8 @@ public class escapeflog : MonoBehaviour
             for (int i = 0; i < FlogObj.Length; i++)
             {
                 //Debug.Log("色");
-                FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[i];
+                FlogObj[i].GetComponent<SkinnedMeshRenderer>().material
+                    = materials[i];
             }
             //flog.GetComponent<Renderer>().material = materials[0];
             flog.GetComponent<Collider>().enabled = true;
