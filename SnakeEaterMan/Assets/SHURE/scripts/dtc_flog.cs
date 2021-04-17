@@ -14,13 +14,9 @@ public class dtc_flog : MonoBehaviour
     private NavMeshAgent agent;//動くために必要な物4
     public Transform runpoint;//リスポーン
 
-    [SerializeField]
+    [SerializeField]//目的地
     private Transform[] ROOT;
     private int nextIndex = 0;
-    //private Transform rootA;//目標（通るルート
-    //public Transform rootB;//目標（通るルート
-    //public Transform rootC;//目標（通るルート
-
 
     [SerializeField]
     private Transform target;//目標(プレイヤー
@@ -31,29 +27,21 @@ public class dtc_flog : MonoBehaviour
     [SerializeField]
     private Transform t4;
 
-    private float distance;//プレイヤー距離
-    private float distance2;
-    private float distance3;
-    private float distance4;
     //リスポーン    
     [SerializeField]
     private GameObject spawnpoint;
-
     //private float flogx;
     //private float flogy;
     //private float flogz;
-
-
     public float deathCout = 0;
     private bool deathflag = false;
     private GameObject flogpos;
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        flogpos = transform.root.gameObject;
-        //agent.autoBraking = false;
-        agent.destination = ROOT[nextIndex].transform.position;
+        flogpos = transform.root.gameObject;//カエルの座標
+        agent.autoBraking = false;
+        agent.destination = ROOT[nextIndex].transform.position;//向かう座標
     }
     //移動するときに別のルートを取るため、
     //ｒAに当たったらlengthから-1して+して次に向かう
@@ -87,58 +75,38 @@ public class dtc_flog : MonoBehaviour
     }
     void Update()
     {
-        float a = 0.25f;
+        // float a = 0.25f;
         Vector3 pos = transform.position;
         pos.y = 0.25f;
         transform.position = pos;
         //インデックスに応じた目的地に設定する
         agent.destination = ROOT[nextIndex].transform.position;
-        //二者間の距離を計算してfloat 一定値に行かなければ追跡する
-        distance = Vector3.Distance(transform.position,
-            target.transform.position);//距離を計算
-        distance2 = Vector3.Distance(transform.position,
-      t2.transform.position);//距離を計算
-        distance3 = Vector3.Distance(transform.position,
-    t3.transform.position);//距離を計算
-        distance4 = Vector3.Distance(transform.position,
-    t4.transform.position);//距離を計算
         //死亡フラグがtrueなら
         if (deathflag == true)
         {
-            //ランダムスポーン場所
-            //flogx = Random.Range(-30.0f, 30.0f);
-            //flogy = Random.Range(0.0f, 0.0f);
-            //flogz = Random.Range(-30.0f, 30.0f);
-            //   Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
-            //flogpos.transform.localPosition = //runpoint.transform.localPosition;
-               // new Vector3(flogx, flogy, flogz);//Quaternion.identity);
-
             for (int i = 0; i < FlogObj.Length; i++)
             {
                 FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[4];
             }
-
-
-            flogpos.transform.localPosition = spawnpoint.transform.localPosition;
+            flogpos.transform.localPosition = spawnpoint.transform.localPosition;//リスポーン地点
         }
         //死亡カウントが６より大きいなら
-        if (deathCout> 6)
+        if (deathCout > 6)
         {
             Debug.Log("復活");
-            flogpos.GetComponent<Renderer>().material = materials[0];
-            flogpos.GetComponent<Collider>().enabled = true;
-            //flogpos.transform.localPosition = spawnpoint.transform.localPosition;
-
             for (int i = 0; i < FlogObj.Length; i++)
             {
-                Debug.Log("色");
+                //Debug.Log("色");
                 FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[i];
             }
+            flogpos.GetComponent<Collider>().enabled = true;
             deathCout = 0;
+
             deathflag = false;
         }
+        //flogpos.transform.localPosition = spawnpoint.transform.localPosition;
+        // flogpos.GetComponent<Renderer>().material = materials[0];
         //Debug.Log(agent.velocity.magnitude);//移動量
     }
-
 }

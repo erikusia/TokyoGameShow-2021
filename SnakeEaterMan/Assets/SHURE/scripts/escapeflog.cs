@@ -8,6 +8,10 @@ public class escapeflog : MonoBehaviour
     //色変更用
     [SerializeField]
     private Material[] materials;
+
+    [SerializeField]
+    private GameObject[] FlogObj;
+
     [SerializeField]
     private Transform target;//目標(プレイヤー
     public Transform t2;
@@ -31,6 +35,7 @@ public class escapeflog : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.autoBraking = false;
         flogpos = transform.root.gameObject;
     }
 
@@ -63,36 +68,30 @@ public class escapeflog : MonoBehaviour
         {
             agent.destination = agent.destination - (t4.transform.position - agent.destination);
         }
-        //距離が１以上の時、プレイヤーの近くで停止する
-        //if (distance < 1 || distance2 < 1 || distance3 < 1 || distance4 < 1)
-        //{
-        //    agent.destination = target.transform.position;
-        //    agent.destination = t2.transform.position;
-        //    agent.destination = t3.transform.position;
-        //    agent.destination = t4.transform.position;
-        //    if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
-        //     GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
-        //    {
-        //        flog.GetComponent<Collider>().enabled = false;
-        //        deathflag = true;
-        //    }
-        //}
-        //flog.GetComponent<Collider>().enabled = false;
+
 
         if (deathflag == true)
         {
-            flog.GetComponent<Renderer>().material = materials[1];
+          //  flog.GetComponent<Renderer>().material = materials[1];
             //Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
-
+            for (int i = 0; i < FlogObj.Length; i++)
+            {
+                FlogObj[i].GetComponent<SkinnedMeshRenderer>().
+                    material = materials[4];
+            }
             flogpos.transform.localPosition =
                 runpoint.transform.localPosition;
-
         }
         if (deathCout > 6)
         {
             Debug.Log("復活");
-            flog.GetComponent<Renderer>().material = materials[0];
+            for (int i = 0; i < FlogObj.Length; i++)
+            {
+                //Debug.Log("色");
+                FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[i];
+            }
+            //flog.GetComponent<Renderer>().material = materials[0];
             flog.GetComponent<Collider>().enabled = true;
             deathCout = 0;
             deathflag = false;

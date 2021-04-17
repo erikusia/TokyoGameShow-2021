@@ -791,10 +791,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7897213662382930359}
   - component: {fileID: 7643224850130357504}
+  - component: {fileID: 5947982765949759775}
   - component: {fileID: 7643224850130357510}
   - component: {fileID: 7643224850130357509}
   - component: {fileID: 7643224850130357505}
-  - component: {fileID: 7643224850130357506}
   m_Layer: 0
   m_Name: FLOGS_JAMP
   m_TagString: Untagged
@@ -831,6 +831,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &5947982765949759775
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409364014486151949}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!320 &7643224850130357510
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -884,6 +906,15 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: caf20e74db3609249940f1176c761851, type: 2}
   - {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+  - {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+  - {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+  - {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+  FlogObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  runpoint: {fileID: 0}
   ROOT:
   - {fileID: 0}
   - {fileID: 0}
@@ -895,28 +926,7 @@ MonoBehaviour:
   t3: {fileID: 0}
   t4: {fileID: 0}
   spawnpoint: {fileID: 0}
---- !u!195 &7643224850130357506
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7409364014486151949}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 4.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 210
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  deathCout: 0
 --- !u!1 &7564444262053129089
 GameObject:
   m_ObjectHideFlags: 0
