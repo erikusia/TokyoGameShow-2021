@@ -32,7 +32,6 @@ public class escapeflog : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         flogpos = transform.root.gameObject;
-        //    runpoint = GetComponent<NavMeshAgent>();
     }
 
     void Update()

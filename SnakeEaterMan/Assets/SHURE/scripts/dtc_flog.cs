@@ -39,12 +39,12 @@ public class dtc_flog : MonoBehaviour
     [SerializeField]
     private GameObject spawnpoint;
 
-    private float flogx;
-    private float flogy;
-    private float flogz;
+    //private float flogx;
+    //private float flogy;
+    //private float flogz;
 
 
-   public float deathCout = 0;
+    public float deathCout = 0;
     private bool deathflag = false;
     private GameObject flogpos;
 
@@ -102,34 +102,17 @@ public class dtc_flog : MonoBehaviour
     t3.transform.position);//距離を計算
         distance4 = Vector3.Distance(transform.position,
     t4.transform.position);//距離を計算
-        //距離が1なら
-        //if (distance < 1||distance2<1||distance3<1||distance4<1)
-        //{
-        //    agent.destination = target.transform.position;
-        //    agent.destination = t2.transform.position;
-        //    agent.destination = t3.transform.position;
-        //    agent.destination = t4.transform.position;
-        //    spawnpoint.GetComponent<Collider>().enabled = false;
-
-        //    if (GameObject.FindWithTag("head1") || GameObject.FindWithTag("head2") ||
-        //        GameObject.FindWithTag("head3") || GameObject.FindWithTag("head4"))
-        //    {
-        //        spawnpoint.GetComponent<Collider>().enabled = false;
-        //        deathflag = true;
-        //    }
-
-        //}
         //死亡フラグがtrueなら
         if (deathflag == true)
         {
             //ランダムスポーン場所
-            flogx = Random.Range(-30.0f, 30.0f);
-            flogy = Random.Range(0.0f, 0.0f);
-            flogz = Random.Range(-30.0f, 30.0f);
+            //flogx = Random.Range(-30.0f, 30.0f);
+            //flogy = Random.Range(0.0f, 0.0f);
+            //flogz = Random.Range(-30.0f, 30.0f);
             //   Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
-            flogpos.transform.localPosition = //runpoint.transform.localPosition;
-                new Vector3(flogx, flogy, flogz);//Quaternion.identity);
+            //flogpos.transform.localPosition = //runpoint.transform.localPosition;
+               // new Vector3(flogx, flogy, flogz);//Quaternion.identity);
 
             for (int i = 0; i < FlogObj.Length; i++)
             {
@@ -137,17 +120,19 @@ public class dtc_flog : MonoBehaviour
             }
 
 
-           //  flogpos.transform.localPosition = spawnpoint[spawns].transform.localPosition;
+            flogpos.transform.localPosition = spawnpoint.transform.localPosition;
         }
         //死亡カウントが６より大きいなら
-        if (deathCout > 6)
+        if (deathCout> 6)
         {
             Debug.Log("復活");
             flogpos.GetComponent<Renderer>().material = materials[0];
             flogpos.GetComponent<Collider>().enabled = true;
-          
+            //flogpos.transform.localPosition = spawnpoint.transform.localPosition;
+
             for (int i = 0; i < FlogObj.Length; i++)
             {
+                Debug.Log("色");
                 FlogObj[i].GetComponent<SkinnedMeshRenderer>().material = materials[i];
             }
             deathCout = 0;
