@@ -100,6 +100,7 @@ public class ItemState : MonoBehaviour
         else if (paralysisCount > count)
         {
             itemState = item = "None";
+            paralysisCount = 0;
         }
         if (item == "Paralysis")
         {

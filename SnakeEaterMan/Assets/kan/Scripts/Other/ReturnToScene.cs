@@ -61,7 +61,7 @@ public class ReturnToScene : MonoBehaviour
                 titleButton.interactable = true;
                 gameEndButton.interactable = false;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 3"))
+                if (Input.GetButtonDown("B_ALL"))
                 {
                     audioSource.PlayOneShot(clip);
                     titleButton.GetComponent<TitleButton>().OnClick();
@@ -72,7 +72,7 @@ public class ReturnToScene : MonoBehaviour
                 titleButton.interactable = false;
                 gameEndButton.interactable = true;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 3"))
+                if (Input.GetButtonDown("B_ALL"))
                 {
                     audioSource.PlayOneShot(clip);
                     gameEndButton.GetComponent<GameEndButton>().OnClick();

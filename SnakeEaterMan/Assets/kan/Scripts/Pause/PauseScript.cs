@@ -22,8 +22,8 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 11"))
+		//Stateボタン
+		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Option_ALL"))
 		{
 			if (pauseUIInstance == null)
 			{
@@ -35,7 +35,10 @@ public class PauseScript : MonoBehaviour
 			{
 				audioSource.PlayOneShot(clips);
 				Destroy(pauseUIInstance);
-				Time.timeScale = 1f;
+				if (GameObject.Find("HowToPlayer").GetComponent<HowToPlayer>().b)
+				{
+					Time.timeScale = 1;
+				}
 			}
 		}
 

@@ -76,10 +76,13 @@ public class PauseButton : MonoBehaviour
                 returnButton.interactable = true;
                 gameEndButton.interactable = titleButton.interactable = false;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 3"))
+                if (Input.GetButtonDown("B_ALL"))
                 {
                     //audioSource.PlayOneShot(clip);
-                    Time.timeScale = 1;
+                    if(GameObject.Find("HowToPlayer").GetComponent<HowToPlayer>().b)
+                    {
+                        Time.timeScale = 1;
+                    }
                     Destroy(gameObject);
                 }
                 break;
@@ -88,7 +91,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = true;
                 gameEndButton.interactable = returnButton.interactable = false;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 3"))
+                if (Input.GetButtonDown("B_ALL"))
                 {
                     //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
@@ -100,7 +103,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = returnButton.interactable = false;
                 gameEndButton.interactable = true;
                 //Bボタン押したら
-                if (Input.GetKey("joystick button 3"))
+                if (Input.GetButtonDown("B_ALL"))
                 {
                     //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;

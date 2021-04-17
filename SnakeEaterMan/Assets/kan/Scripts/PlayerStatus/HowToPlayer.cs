@@ -14,7 +14,7 @@ public class HowToPlayer : MonoBehaviour
     private GUIStyle style;
     private bool isGUI;
 
-    private bool b = false;
+    public bool b = false;
     private void Awake()
     {
         Time.timeScale = 0;
