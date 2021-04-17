@@ -17,8 +17,9 @@ public class GameClearFlag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         //プレイヤー分の名前をリストに入れる
-        for(int i = 1;i < 5;i++)
+        for (int i = 1;i < 5;i++)
         {
             string pName = "Player" + i.ToString();
             matName.Insert(i-1, GameObject.Find(pName));
