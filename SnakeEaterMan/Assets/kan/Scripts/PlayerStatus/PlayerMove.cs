@@ -8,7 +8,8 @@ public class PlayerMove : MonoBehaviour
     //移動用キャラクターコントローラー
     CharacterController m_controller;
     //ダッシュ用スライダー
-    GameObject SliderObject;
+    [SerializeField]
+    private GameObject SliderObject;
     Slider DashSlider;
     //移動用の変数たち
     public float m_walk = 10;
@@ -35,7 +36,6 @@ public class PlayerMove : MonoBehaviour
         //キャラクターコントローラーの取得
         m_controller = GetComponent<CharacterController>();
         //スライダーオブジェクトの取得
-        SliderObject = GameObject.FindWithTag("DashP1");
         DashSlider = SliderObject.GetComponent<Slider>();
 
         //Inputで使う物を指定  Horizontal + 1
