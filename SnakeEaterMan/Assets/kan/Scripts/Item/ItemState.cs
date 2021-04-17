@@ -55,8 +55,8 @@ public class ItemState : MonoBehaviour
 
             item = itemState;
 
-            if(itemState == "DashItem")
-                GetComponent<PlayerStatus>().PlayerState = itemState;
+            if (itemState == "DashItem")
+                gameObject.transform.root.GetComponent<PlayerMove>().dashTime += 1;
 
             if (itemState == "Paralysis")
                 item = itemState;
