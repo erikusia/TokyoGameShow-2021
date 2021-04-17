@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 9cf7d86b8760e6f4c97838f365bb5a17, type: 2}
+--- !u!1 &35579591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6661650458457775724, guid: c73b4ecf55bc65d47bc55090e61c8306,
+    type: 3}
+  m_PrefabInstance: {fileID: 5971814235428900904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66777574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2686593580387215897, guid: 082d5ffa45a625a4681a7adfd13aebbe,
@@ -1085,6 +1091,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2686593580387215897, guid: 082d5ffa45a625a4681a7adfd13aebbe,
     type: 3}
   m_PrefabInstance: {fileID: 1233038770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &390862558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924593348079739786, guid: 9417edbfeb62b7444baa565183d1ee11,
+    type: 3}
+  m_PrefabInstance: {fileID: 163847454660875796}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &392427716
 PrefabInstance:
@@ -4063,6 +4075,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 082d5ffa45a625a4681a7adfd13aebbe, type: 3}
+--- !u!1 &1489347771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7456809032263949358, guid: 2e177c82249d12944b635981959bcfa2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7631669436220838923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492792191
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,6 +4567,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 417201154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1964448739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5171431248705706093, guid: 13d8eeb934480cd4a994103ed23994ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 5284507928821682719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026501857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3457520589265005925, guid: 082d5ffa45a625a4681a7adfd13aebbe,
@@ -4864,6 +4888,11 @@ PrefabInstance:
       propertyPath: m_walk
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1046932663391739272, guid: 9417edbfeb62b7444baa565183d1ee11,
+        type: 3}
+      propertyPath: SliderObject
+      value: 
+      objectReference: {fileID: 390862558}
     - target: {fileID: 1528673726883818366, guid: 9417edbfeb62b7444baa565183d1ee11,
         type: 3}
       propertyPath: m_Camera
@@ -5206,6 +5235,11 @@ PrefabInstance:
       propertyPath: m_walk
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5014545049602090607, guid: 13d8eeb934480cd4a994103ed23994ed,
+        type: 3}
+      propertyPath: SliderObject
+      value: 
+      objectReference: {fileID: 1964448739}
     - target: {fileID: 5284507926930391572, guid: 13d8eeb934480cd4a994103ed23994ed,
         type: 3}
       propertyPath: enemys.Array.data[0]
@@ -5351,6 +5385,11 @@ PrefabInstance:
       propertyPath: m_walk
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6782786874252271726, guid: c73b4ecf55bc65d47bc55090e61c8306,
+        type: 3}
+      propertyPath: SliderObject
+      value: 
+      objectReference: {fileID: 35579591}
     - target: {fileID: 7483063285035893563, guid: c73b4ecf55bc65d47bc55090e61c8306,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5441,11 +5480,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 4638176242155690204, guid: 2e177c82249d12944b635981959bcfa2,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5228453052445026633, guid: 2e177c82249d12944b635981959bcfa2,
         type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1587512939}
+    - target: {fileID: 6687891538965479801, guid: 2e177c82249d12944b635981959bcfa2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6687891538965479801, guid: 2e177c82249d12944b635981959bcfa2,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5461,6 +5510,11 @@ PrefabInstance:
       propertyPath: m_walk
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7289158714459218476, guid: 2e177c82249d12944b635981959bcfa2,
+        type: 3}
+      propertyPath: SliderObject
+      value: 
+      objectReference: {fileID: 1489347771}
     - target: {fileID: 7631669435907755181, guid: 2e177c82249d12944b635981959bcfa2,
         type: 3}
       propertyPath: enemys.Array.data[0]
