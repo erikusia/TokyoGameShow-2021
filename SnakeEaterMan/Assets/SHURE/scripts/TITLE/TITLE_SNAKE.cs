@@ -26,11 +26,11 @@ public class TITLE_SNAKE : MonoBehaviour
             if (Scene_Time > 0.5f)
             {
                 //Debug.Log("koko");
-                SNAKEA.transform.localPosition -= new Vector3(0.0f, 0.0f, 3.0f);
+                SNAKEA.transform.localPosition -= new Vector3(0.0f, 0.0f, 0.5f);
             }
-            if (Scene_Time > 3.3f)
+            if (Scene_Time > 3.5f)
             {
-                SNAKEA.transform.localPosition = new Vector3(0, -5, 117);
+                SNAKEA.transform.localPosition = new Vector3(0, -3, 117);
                 flag = false;
             }
 
