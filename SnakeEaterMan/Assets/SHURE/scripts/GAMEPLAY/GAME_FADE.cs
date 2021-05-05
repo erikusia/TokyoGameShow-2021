@@ -21,7 +21,7 @@ public class GAME_FADE : MonoBehaviour
     void Update()
     {
         flag = true;
-        Debug.Log(alpha);
+
         if (flag == true)
         {
             alpha -= fade_speed;

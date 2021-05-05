@@ -1579,6 +1579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FLOGS_JAMP
       objectReference: {fileID: 0}
+    - target: {fileID: 7409364014486151949, guid: de1886712a529234d9afa13261c2124f,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
+      objectReference: {fileID: 0}
     - target: {fileID: 7643224850130357504, guid: de1886712a529234d9afa13261c2124f,
         type: 3}
       propertyPath: m_Radius
@@ -2028,6 +2033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FLOGS_JAMP (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409364014486151949, guid: de1886712a529234d9afa13261c2124f,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
       objectReference: {fileID: 0}
     - target: {fileID: 7643224850130357505, guid: de1886712a529234d9afa13261c2124f,
         type: 3}
@@ -3877,7 +3887,7 @@ GameObject:
   - component: {fileID: 1377679962}
   - component: {fileID: 1377679961}
   m_Layer: 5
-  m_Name: Image
+  m_Name: fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,6 +4043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 318430948, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8386399190027457412, guid: 6b0f58568262ffe48acf2e11d1250077,
         type: 3}
       propertyPath: m_Name
@@ -4166,6 +4180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RUN_FLOGS (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272869365097892964, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
       objectReference: {fileID: 0}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -4510,6 +4529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RUN_FLOGS (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272869365097892964, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
       objectReference: {fileID: 0}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -4899,6 +4923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RUN_FLOGS (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272869365097892964, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
       objectReference: {fileID: 0}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -5508,6 +5537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RUN_FLOGS (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2272869365097892964, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
+      objectReference: {fileID: 0}
     - target: {fileID: 2890679991064200072, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5977,6 +6011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RUN_FLOGS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272869365097892964, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: flog
       objectReference: {fileID: 0}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
