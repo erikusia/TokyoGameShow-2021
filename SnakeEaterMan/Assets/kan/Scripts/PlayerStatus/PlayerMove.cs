@@ -112,7 +112,7 @@ public class PlayerMove : MonoBehaviour
                         waitTime = 0;
 
                         //スタミナ回復SE
-                        GetComponentInChildren<PlayerSE>().PlayerSoundName = "Stamina";
+                        //GetComponentInChildren<PlayerSE>().PlayerSoundName = "Stamina";
                     }
                 }
             }

@@ -127,16 +127,11 @@ public class PlayerHead : MonoBehaviour
             }
         }
 
-        //if (collision.gameObject.tag != "Player1")
-        //{
-        //    //Debug.Log(collision.gameObject.tag);
-        //}
-
         if (collision.gameObject.tag == "flog" && hitDef == false)
         {
             hit = true;
             gameObject.transform.root.GetComponent<PlayerMove>().dashTime += 1;
-            GetComponent<PlayerSE>().PlayerSoundName = "Eating";
+            GetComponent<PlayerSE>().PlayerSoundName = "Eating2";
         }
     }
 }

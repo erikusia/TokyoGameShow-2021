@@ -64,7 +64,7 @@ public class ItemState : MonoBehaviour
             itemState = "None";
         }
         //麻痺攻撃
-        AttackParalysis(3.0f);
+        AttackParalysis(1.0f);
 
         //ItemUI表示
         itemUI.GetComponent<ItemUI>().itemImageName = itemState;

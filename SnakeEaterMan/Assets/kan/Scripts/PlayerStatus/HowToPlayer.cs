@@ -10,6 +10,11 @@ public class HowToPlayer : MonoBehaviour
     private bool[] isPlayer = new bool[4];
     private GameObject[] gameObjects = new GameObject[4];
 
+    private Text p1text;
+    private Text p2text;
+    private Text p3text;
+    private Text p4text;
+
     public GUIStyleState styleState;
     private GUIStyle style;
     private bool isGUI;
@@ -28,6 +33,11 @@ public class HowToPlayer : MonoBehaviour
         gameObjects[1] = GameObject.Find("Player2");
         gameObjects[2] = GameObject.Find("Player3");
         gameObjects[3] = GameObject.Find("Player4");
+
+        p1text = transform.GetChild(1).GetComponentInChildren<Text>();
+        p2text = transform.GetChild(2).GetComponentInChildren<Text>();
+        p3text = transform.GetChild(3).GetComponentInChildren<Text>();
+        p4text = transform.GetChild(4).GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -94,7 +104,16 @@ public class HowToPlayer : MonoBehaviour
                 if(!b)
                 {
                     style.normal = styleState;
-                    GUI.Label(new Rect(100 * i, 20, 100, 50), (i + 1).ToString() + "Player準備完了、Aボタンでスタート", style);
+                   // GUI.Label(new Rect(100 * i, 20, 100, 50), (i + 1).ToString() + "Player準備完了、Aボタンでスタート", style);
+
+                    if (i == 0)
+                        p1text.text = "[1P]準備完了 : Aボタンでスタート";
+                    if (i == 1)
+                        p1text.text = "[2P]準備完了 : Aボタンでスタート";
+                    if (i == 2)
+                        p1text.text = "[3P]準備完了 : Aボタンでスタート";
+                    if (i == 3)
+                        p1text.text = "[4P]準備完了 : Aボタンでスタート";
                 }
 
             }

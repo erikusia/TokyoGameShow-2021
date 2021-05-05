@@ -6,7 +6,18 @@ public class PlayerColor : MonoBehaviour
 {
     public GameObject[] gameObjects = new GameObject[4];
     [SerializeField]
-    private Material[] materials = new Material[6];
+    private Material White;
+    [SerializeField]
+    private Material Blue;
+    [SerializeField]
+    private Material Green;
+    [SerializeField]
+    private Material Red;
+    [SerializeField]
+    private Material Transparency;
+    [SerializeField]
+    private Material Yellow;
+
     public string[] materialsName;
 
     // Start is called before the first frame update
@@ -38,17 +49,17 @@ public class PlayerColor : MonoBehaviour
         for (int i = 0; i < gameObjects.Length; i++)
         {
             if (s[i].Contains("White"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[0];
+                gameObjects[i].GetComponent<Renderer>().material = White;
             else if (s[i].Contains("Blue"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[1];
+                gameObjects[i].GetComponent<Renderer>().material = Blue;
             else if (s[i].Contains("Green"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[2];
+                gameObjects[i].GetComponent<Renderer>().material = Green;
             else if (s[i].Contains("Red"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[3];
+                gameObjects[i].GetComponent<Renderer>().material = Red;
             else if (s[i].Contains("Transparency"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[4];
+                gameObjects[i].GetComponent<Renderer>().material = Transparency;
             else if (s[i].Contains("Yellow"))
-                gameObjects[i].GetComponent<Renderer>().material = materials[5];
+                gameObjects[i].GetComponent<Renderer>().material = Yellow;
         }
     }
 
