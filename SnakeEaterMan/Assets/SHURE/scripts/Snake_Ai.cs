@@ -13,7 +13,7 @@ public class Snake_Ai : MonoBehaviour
     {
         if (col.gameObject.CompareTag("tail"))
         { 
-            Debug.Log("コリジョン");
+            //Debug.Log("コリジョン");
             hebiai.GetComponent<hebi_ai>().nextIndex=Random.Range(0,3);
         }
     }
