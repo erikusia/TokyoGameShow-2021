@@ -35,7 +35,7 @@ public class PauseScript : MonoBehaviour
 			{
 				audioSource.PlayOneShot(clips);
 				Destroy(pauseUIInstance);
-				if (GameObject.Find("HowToPlayer").GetComponent<HowToPlayer>().b)
+				if (GameObject.Find("HowToPlayer").GetComponentInChildren<HowToPlayer>().b)
 				{
 					Time.timeScale = 1;
 				}

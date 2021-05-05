@@ -12,8 +12,8 @@ public class miniMapPlayer : MonoBehaviour
     {
         oldPos = player.GetComponent<Transform>().position;
         this.gameObject.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(oldPos.x * 2, oldPos.z * 2, 0);
-        Debug.Log("a:"+player.GetComponent<Transform>().position);
-        Debug.Log("b:"+this.gameObject.GetComponent<RectTransform>().anchoredPosition3D);
+        //Debug.Log("a:"+player.GetComponent<Transform>().position);
+        //Debug.Log("b:"+this.gameObject.GetComponent<RectTransform>().anchoredPosition3D);
     }
 
     // Update is called once per frame
