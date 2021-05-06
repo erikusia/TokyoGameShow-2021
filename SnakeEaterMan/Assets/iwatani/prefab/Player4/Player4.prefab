@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 8693067931527851094}
   m_Layer: 0
   m_Name: Player4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,13 +546,12 @@ MonoBehaviour:
   - {fileID: 750442093987698114}
   - {fileID: 7425563102318715296}
   - {fileID: 5956661770110248381}
-  materials:
-  - {fileID: 2100000, guid: 28d2b6f9a3eade2448693c5938abf24e, type: 2}
-  - {fileID: 2100000, guid: af4848a481b50f340869256df433a0c9, type: 2}
-  - {fileID: 2100000, guid: 0948fc2c3d2793d4694fb6af514067ad, type: 2}
-  - {fileID: 2100000, guid: caf20e74db3609249940f1176c761851, type: 2}
-  - {fileID: 2100000, guid: c58f3cd78b75dc14c9523079d235a7e9, type: 2}
-  - {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+  White: {fileID: 0}
+  Blue: {fileID: 0}
+  Green: {fileID: 0}
+  Red: {fileID: 0}
+  Transparency: {fileID: 0}
+  Yellow: {fileID: 0}
   materialsName: []
 --- !u!1 &3315370708587984151
 GameObject:
@@ -853,7 +852,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4210da3644c860448b617361680a9a5, type: 3}
   - {fileID: 8300000, guid: 174dd82bb7b84c04b83995063fca15c4, type: 3}
   - {fileID: 8300000, guid: 9e5b49a3f8603ca46b8b3689eb35790f, type: 3}
-  - {fileID: 8300000, guid: a195ec0ccc6e58f4fb4040d780e7966a, type: 3}
+  - {fileID: 8300000, guid: 56fde050116598a42805c3ac3ab59e40, type: 3}
   - {fileID: 8300000, guid: f9032583ccc8a6d4abe66bb91e9e828d, type: 3}
   - {fileID: 8300000, guid: 99e4c4a99ec9790448a8d81c3f93afaa, type: 3}
   - {fileID: 8300000, guid: 48fdc1e58ef1be14984c76ff08cda69a, type: 3}

@@ -30,6 +30,9 @@ public class PlayerMove : MonoBehaviour
 
     private bool dashSound = false;
 
+    //移動アニメーション用アニメーター
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,9 @@ public class PlayerMove : MonoBehaviour
         //Inputで使う物を指定  Horizontal + 1
         inputHorizontal += playerNumber.ToString();
         inputVertical += playerNumber.ToString();
+
+        //アニメーターの取得
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -58,7 +64,7 @@ public class PlayerMove : MonoBehaviour
 
         if (x != 0 || z != 0)
         {
-
+            animator.SetFloat("MoveSpeed", 1.0f);
             if (Time.timeScale == 0)
                 return;
             // 矢印キーが押されている方向にプレイヤーを移動する
@@ -72,8 +78,9 @@ public class PlayerMove : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.localRotation = Quaternion.Slerp(myTransform.localRotation, targetRotation, Time.deltaTime * m_rotato);
         }
+        else animator.SetFloat("MoveSpeed", 0.0f);
 
-        
+
         string s = "A" + playerNumber.ToString();
 
         if (Input.GetButton(s))
@@ -94,7 +101,6 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-
             if (dashTime < 1)
             {
                 if (dashTime <= 0)
