@@ -106,13 +106,15 @@ public class PlayerStatusManager : MonoBehaviour
             l.Add(player3);
         if (player4.GetComponent<PlayerColor>().materialsName[0] != "Transparency")
             l.Add(player4);
-        int i = 0;
-        while (i < l.Count)
+
+        int r = 0;
+        int lmax = l.Count;
+        for (int i = 0; i < lmax;i++)
         {
-            int r = Random.Range(0, l.Count);
+            r = Random.Range(0, l.Count);
             list[i].GetComponent<PlayerColor>().ChangeColor(l[r].GetComponent<PlayerColor>().materialsName);
-            l.Remove(l[r]);
-            i++;
+            l.RemoveAt(r);
         }
+        //Debug.Log(c);
     }
 }

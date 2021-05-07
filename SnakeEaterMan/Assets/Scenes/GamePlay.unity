@@ -5562,6 +5562,11 @@ PrefabInstance:
       propertyPath: Transparency
       value: 
       objectReference: {fileID: 2100000, guid: 5436be1f670373448896804647ef0a6e, type: 2}
+    - target: {fileID: 7960682112485726449, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
+        type: 3}
+      propertyPath: gameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1335854124}
     - target: {fileID: 7960682112485726454, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
         type: 3}
       propertyPath: enemys.Array.data[0]

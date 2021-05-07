@@ -13,9 +13,12 @@ public class PlayerTail : MonoBehaviour
     //リスポーン用
     public bool deathFlag = false;
     float respawnCount = 0;
+    float dashTime;
     [SerializeField]
     private GameObject spawnPoint;
     private GameObject PlayerPos;
+    bool hit;
+    public bool dash=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,10 @@ public class PlayerTail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(dash)
+        {
+            dashTime += Time.deltaTime;
+        }
         if (deathFlag == true)
         {
             //Debug.Log("Player1Dead");
@@ -70,9 +77,11 @@ public class PlayerTail : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //頭がぶつかったら
-        if (collision.gameObject.tag == "head1")
+        if (collision.gameObject.tag == "head1"&&!hit)
         {
-            //Debug.Log("当たった");
+            hit = true;
+            
+            Debug.Log(collision.gameObject.transform.root.name+"当たった");
             for (int i = 0; i < gameObjects.Length - 2; i++)
             {
                 gameObjects[i].GetComponent<Renderer>().material = gameObjects[i + 1].GetComponent<Renderer>().material;
@@ -89,6 +98,19 @@ public class PlayerTail : MonoBehaviour
                     deathFlag = true;
                 }
             }
+            if (!deathFlag)
+            {
+                this.dash = true;
+            }
+            Debug.Log(dash);
+        }
+        else if(dashTime>=2.5f)
+        {
+            this.dash = false;
+        }
+        else
+        {
+            hit = false;
         }
     }
 }

@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
     public float m_dashTimePlus = 0.1f;
     private float m_speed;
     Vector3 local_angle;
-    bool dash = false;
+    public bool dash = false;
     public float dashTime = 1;
     float waitTime = 0;
 
@@ -83,9 +83,10 @@ public class PlayerMove : MonoBehaviour
 
         string s = "A" + playerNumber.ToString();
 
-        if (Input.GetButton(s))
+        if (Input.GetButton(s)|| gameObject.transform.Find("group1").GetComponentInChildren<PlayerTail>().dash)
         {
             waitTime = 0;
+            m_speed = m_dash;
             dash = true;
         }
         else dash = false;
@@ -93,9 +94,9 @@ public class PlayerMove : MonoBehaviour
         //ダッシュしたら音を鳴らす
         PlayDashSound();
 
-        if (dash == true && dashTime > 0)
+        if (dash == true && dashTime > 0&& !gameObject.transform.Find("group1").GetComponentInChildren<PlayerTail>().dash)
         {
-            m_speed = m_dash;
+            
             dashTime -= Time.deltaTime;
             //Debug.Log("ダッシュ");
         }

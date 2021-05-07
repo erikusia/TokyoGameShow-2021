@@ -109,11 +109,11 @@ public class HowToPlayer : MonoBehaviour
                     if (i == 0)
                         p1text.text = "[1P]準備完了 : Aボタンでスタート";
                     if (i == 1)
-                        p1text.text = "[2P]準備完了 : Aボタンでスタート";
+                        p2text.text = "[2P]準備完了 : Aボタンでスタート";
                     if (i == 2)
-                        p1text.text = "[3P]準備完了 : Aボタンでスタート";
+                        p3text.text = "[3P]準備完了 : Aボタンでスタート";
                     if (i == 3)
-                        p1text.text = "[4P]準備完了 : Aボタンでスタート";
+                        p4text.text = "[4P]準備完了 : Aボタンでスタート";
                 }
 
             }

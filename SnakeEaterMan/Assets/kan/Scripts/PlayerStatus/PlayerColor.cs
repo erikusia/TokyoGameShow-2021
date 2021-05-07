@@ -51,15 +51,29 @@ public class PlayerColor : MonoBehaviour
             if (s[i].Contains("White"))
                 gameObjects[i].GetComponent<Renderer>().material = White;
             else if (s[i].Contains("Blue"))
+            {
                 gameObjects[i].GetComponent<Renderer>().material = Blue;
+                //Debug.Log(Blue.name);
+            }
+                
             else if (s[i].Contains("Green"))
+            {
                 gameObjects[i].GetComponent<Renderer>().material = Green;
+                //Debug.Log(Green.name);
+            }
             else if (s[i].Contains("Red"))
+            {
                 gameObjects[i].GetComponent<Renderer>().material = Red;
+                //Debug.Log(Red.name);
+            }
+
             else if (s[i].Contains("Transparency"))
                 gameObjects[i].GetComponent<Renderer>().material = Transparency;
             else if (s[i].Contains("Yellow"))
+            {
                 gameObjects[i].GetComponent<Renderer>().material = Yellow;
+                //Debug.Log(Yellow.name);
+            }
         }
     }
 
