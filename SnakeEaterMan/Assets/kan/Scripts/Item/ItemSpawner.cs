@@ -10,6 +10,8 @@ public class ItemSpawner : MonoBehaviour
     private GameObject[] items;
     private Vector3[] positions;
     private float[] spawnTimes;
+    [SerializeField]
+    private float spawnCount = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class ItemSpawner : MonoBehaviour
             {
                 spawnTimes[i] += Time.deltaTime;
 
-                if (spawnTimes[i] > 1.0f)
+                if (spawnTimes[i] > spawnCount)
                 {
                     items[i] = Instantiate(itemObj,positions[i],Quaternion.identity);
                     spawnTimes[i] = 0.0f;

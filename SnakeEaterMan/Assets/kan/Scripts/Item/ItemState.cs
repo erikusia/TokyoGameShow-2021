@@ -37,7 +37,7 @@ public class ItemState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemState = "None";
+        itemState = "ColorShuffle";
         playerNumber = gameObject.transform.root.GetComponent<PlayerMove>().playerNumber;
         controllerName = "L1_" + playerNumber.ToString();
     }

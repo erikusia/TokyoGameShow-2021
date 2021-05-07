@@ -98,12 +98,16 @@ public class PlayerStatusManager : MonoBehaviour
     private void ColorShuffle(int num)
     {
         List<GameObject> l = new List<GameObject>();
-        l.Add(player1);
-        l.Add(player2);
-        l.Add(player3);
-        l.Add(player4);
+        if (player1.GetComponent<PlayerColor>().materialsName[0] != "Transparency")
+            l.Add(player1);
+        if (player2.GetComponent<PlayerColor>().materialsName[0] != "Transparency")
+            l.Add(player2);
+        if (player3.GetComponent<PlayerColor>().materialsName[0] != "Transparency")
+            l.Add(player3);
+        if (player4.GetComponent<PlayerColor>().materialsName[0] != "Transparency")
+            l.Add(player4);
         int i = 0;
-        while (i < 4)
+        while (i < l.Count)
         {
             int r = Random.Range(0, l.Count);
             list[i].GetComponent<PlayerColor>().ChangeColor(l[r].GetComponent<PlayerColor>().materialsName);
