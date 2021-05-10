@@ -28,7 +28,7 @@ public class ItemState : MonoBehaviour
         get { return item; }
         set { item = value; }
     }
-    [Header("ItemUIの中のItemImageを入れて"),SerializeField]
+    [Header("ItemUIの中のItemImageを入れて"), SerializeField]
     private GameObject itemUI;
     private int playerNumber;
     private string controllerName;
@@ -74,7 +74,7 @@ public class ItemState : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.tag == "Item")
+        if (col.gameObject.tag == "Item")
         {
             itemState = col.gameObject.GetComponent<ItemFruits>().GetStatus;
             //食べるSEを鳴らす
@@ -83,10 +83,13 @@ public class ItemState : MonoBehaviour
             //GetComponent<PlayerHead>().hit = true;
         }
 
-        if (col.gameObject.tag == "tail" && item == "Paralysis")
+        if (item == "Paralysis")
         {
-            var g = col.gameObject.transform.root.gameObject;
-            g.transform.Find("group1").GetComponentInChildren<PlayerStatus>().PlayerState = "Paralysis";
+            if (col.gameObject.tag == "tail" || col.gameObject.tag == "head1" || col.gameObject.tag == "PlayerBody")
+            {
+                var g = col.gameObject.transform.root.gameObject;
+                g.transform.Find("group1").GetComponentInChildren<PlayerStatus>().PlayerState = "Paralysis";
+            }
         }
     }
     /// <summary>
