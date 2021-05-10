@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/GamePlay.unity
-=======
-- path: Assets/Scenes/Syure.unity
->>>>>>> SHURE!!!!
   isLoaded: 1
   isActive: 1
   isSubScene: 0

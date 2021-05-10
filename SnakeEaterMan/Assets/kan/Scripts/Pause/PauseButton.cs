@@ -78,8 +78,14 @@ public class PauseButton : MonoBehaviour
                 //Bボタン押したら
                 if (Input.GetButtonDown("B_ALL"))
                 {
+                    if (GameObject.Find("HowToPlayer").GetComponentInChildren<HowToPlayer>() == null)
+                    {
+                        Destroy(gameObject);
+                        Time.timeScale = 1;
+                        return;
+                    }
                     //audioSource.PlayOneShot(clip);
-                    if(GameObject.Find("HowToPlayer").GetComponentInChildren<HowToPlayer>().b)
+                    if (GameObject.Find("HowToPlayer").GetComponentInChildren<HowToPlayer>().b)
                     {
                         Time.timeScale = 1;
                     }
