@@ -21,7 +21,7 @@ public class TITLE_FLOG : MonoBehaviour
     void Update()
     {
         movetime += 0.01f;
-        Debug.Log(movetime);
+        //Debug.Log(movetime);
         if (movetime > 3.0f)
         {
             flog.transform.localPosition += new Vector3(0.2f, 0.0f, 0.0f);

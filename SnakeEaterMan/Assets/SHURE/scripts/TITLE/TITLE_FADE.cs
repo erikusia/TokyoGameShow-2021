@@ -28,7 +28,7 @@ public class TITLE_FADE : MonoBehaviour
         if (flag == true)
         {
             time += Time.deltaTime;
-            Debug.Log(time);
+            //Debug.Log(time);
             if (time > 3.3)
             {
                 GetComponent<Image>().color = new Color(R, G, B, alfa);
