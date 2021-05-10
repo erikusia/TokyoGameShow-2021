@@ -5,7 +5,8 @@ using UnityEngine;
 public class ItemFruits : MonoBehaviour
 {
     // Start is called before the first frame update
-    private string status;
+    [SerializeField]
+    private string status = "None";
     private bool isDead;
     public string GetStatus
     {
@@ -21,7 +22,9 @@ public class ItemFruits : MonoBehaviour
 
         //確率
         int probability = Random.Range(1, 101);
-        status = "None";
+        
+        if(status != "None")
+        { return; }
 
         //60%
         if (probability <= 60)

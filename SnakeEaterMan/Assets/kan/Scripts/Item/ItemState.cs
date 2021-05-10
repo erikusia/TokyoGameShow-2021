@@ -15,7 +15,8 @@ public class ItemState : MonoBehaviour
 
     //    None
     //}
-    private string itemState;
+    [SerializeField]
+    private string itemState = "None";
     private string item = "None";
     public string GetStatus
     {
@@ -37,7 +38,7 @@ public class ItemState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemState = "ColorShuffle";
+        //itemState = "None";
         playerNumber = gameObject.transform.root.GetComponent<PlayerMove>().playerNumber;
         controllerName = "L1_" + playerNumber.ToString();
     }
@@ -48,6 +49,7 @@ public class ItemState : MonoBehaviour
         //Lボタンを押したら
         if (Input.GetButtonDown(controllerName))
         {
+
             //Debug.Log(itemState.ToString() + " : Itemを使った");
 
             //Sound
