@@ -33,6 +33,11 @@ TagManager:
   - Player1
   - DashP1
   - head1
+  - Item
+  - Player1_Camera
+  - Player2_Camera
+  - Player3_Camera
+  - Player4_Camera
   layers:
   - Default
   - TransparentFX
