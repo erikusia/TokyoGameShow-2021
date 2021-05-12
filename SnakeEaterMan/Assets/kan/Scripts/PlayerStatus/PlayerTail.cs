@@ -19,10 +19,17 @@ public class PlayerTail : MonoBehaviour
     private GameObject PlayerPos;
     bool hit;
     public bool dash=false;
+
+    private GameObject parent;
+    private Quaternion pt;
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerPos = transform.root.gameObject;
+
+        parent = gameObject.transform.root.gameObject;
+        pt = parent.transform.rotation;
     }
 
     // Update is called once per frame
@@ -38,11 +45,11 @@ public class PlayerTail : MonoBehaviour
             //リスポーンするまでの時間計測
             respawnCount += Time.deltaTime;
             //リスポーンする場所に移動
-            PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
+            //PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
             PlayerPos.GetComponent<PlayerMove>().enabled = false;
             for (int i = 0; i < gameObjects.Length; i++)
             {
-                gameObjects[i].GetComponent<Renderer>().material = materials[5];
+                //gameObjects[i].GetComponent<Renderer>().material = materials[5];
                 gameObjects[i].GetComponent<Collider>().enabled = false;
             }
             if (respawnCount > 3)
@@ -63,7 +70,31 @@ public class PlayerTail : MonoBehaviour
                 }
                 gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 4)];
                 deathFlag = false;
-                PlayerPos.GetComponent<PlayerMove>().enabled = true;
+                PlayerPos.GetComponent<PlayerMove>().enabled = true;                
+            }
+
+            //死んだ時の演出
+            if(respawnCount < 3)
+            {
+                for (int i = 0; i < gameObjects.Length; i++)
+                {
+                    gameObjects[i].GetComponent<Renderer>().material = materials[4];
+                }
+                if (respawnCount < 1)//1.0f - 1.0f / 60.0f * respawnCount
+                {
+                    parent.transform.Rotate(new Vector3(0, 0, 2.0f));
+                }
+                if (respawnCount >= 1 && respawnCount < 2)
+                {
+                    var s = 0.5f - 0.5f / 1.0f * respawnCount;
+                    parent.transform.localScale -= new Vector3(0.018f, 0.018f, 0.018f);
+                }                  
+                if (respawnCount >= 2)
+                {
+                    parent.transform.localScale += new Vector3(0.018f, 0.018f, 0.018f);
+                    parent.transform.rotation = pt;
+                    PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
+                }             
             }
         }
         else
@@ -72,6 +103,15 @@ public class PlayerTail : MonoBehaviour
             respawnCount = 0;
         }
 
+    }
+
+    float Quadratic_in_out(float t, float b, float c, float d)
+    {
+        t /= d / 2.0f;
+        if (t < 1)
+            return c / 2.0f * t * t + b;
+        t = t - 1.0f;
+        return -c / 2.0f * (t * (t - 2.0f) - 1.0f) + b;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -112,5 +152,6 @@ public class PlayerTail : MonoBehaviour
         {
             hit = false;
         }
+
     }
 }

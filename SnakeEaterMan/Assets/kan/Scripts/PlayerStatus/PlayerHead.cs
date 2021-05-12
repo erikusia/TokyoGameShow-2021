@@ -113,7 +113,7 @@ public class PlayerHead : MonoBehaviour
                 if (objectName.Substring(0, 6).Equals(tailMatName.Substring(0, 6), StringComparison.Ordinal) && hit)
                 {
                     //Debug.Log("持ってる色だよ");
-                    GetComponent<PlayerSE>().PlayerSoundName = "Eating";
+                    GetComponent<PlayerSE>().PlayerSoundName = "Eating2";
                     gameObject.transform.root.GetComponent<PlayerMove>().dashTime += 1;
                     break;
                 }
