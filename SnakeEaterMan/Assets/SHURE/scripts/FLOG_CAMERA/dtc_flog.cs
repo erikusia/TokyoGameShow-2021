@@ -94,7 +94,7 @@ public class dtc_flog : MonoBehaviour
         //死亡カウントが６より大きいなら
         if (deathCout > 6)
         {
-            Debug.Log("復活");
+            //Debug.Log("復活");
             for (int i = 0; i < FlogObj.Length; i++)
             {
                 //Debug.Log("色");

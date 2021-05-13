@@ -134,7 +134,7 @@ public class PlayerTail : MonoBehaviour
         {
             hit = true;
             
-            Debug.Log(collision.gameObject.transform.root.name+"当たった");
+            //Debug.Log(collision.gameObject.transform.root.name+"当たった");
             for (int i = 0; i < gameObjects.Length - 2; i++)
             {
                 gameObjects[i].GetComponent<Renderer>().material = gameObjects[i + 1].GetComponent<Renderer>().material;
@@ -155,7 +155,7 @@ public class PlayerTail : MonoBehaviour
             {
                 this.dash = true;
             }
-            Debug.Log(dash);
+            //Debug.Log(dash);
         }
         else if(dashTime>=2.5f)
         {
