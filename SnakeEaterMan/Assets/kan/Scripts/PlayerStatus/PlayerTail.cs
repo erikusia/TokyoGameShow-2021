@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerTail : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class PlayerTail : MonoBehaviour
 
     private GameObject parent;
     private Quaternion pt;
-
+    [SerializeField]
+    private GameObject itemUi;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,12 +72,23 @@ public class PlayerTail : MonoBehaviour
                 }
                 gameObjects[0].GetComponent<Renderer>().material = materials[Random.Range(0, 4)];
                 deathFlag = false;
-                PlayerPos.GetComponent<PlayerMove>().enabled = true;                
+                PlayerPos.GetComponent<PlayerMove>().enabled = true;
+                itemUi.SetActive(true);
+                if (parent.GetComponent<PlayerMove>().playerNumber == 0)
+                {
+                    parent.GetComponent<NavMeshAgent>().speed = 3.5f;
+                }
             }
 
             //死んだ時の演出
             if(respawnCount < 3)
             {
+                itemUi.SetActive(false);
+
+                if (parent.GetComponent<PlayerMove>().playerNumber == 0)
+                {
+                    parent.GetComponent<NavMeshAgent>().speed = 0;
+                }
                 for (int i = 0; i < gameObjects.Length; i++)
                 {
                     gameObjects[i].GetComponent<Renderer>().material = materials[4];
@@ -86,12 +99,21 @@ public class PlayerTail : MonoBehaviour
                 }
                 if (respawnCount >= 1 && respawnCount < 2)
                 {
-                    var s = 0.5f - 0.5f / 1.0f * respawnCount;
-                    parent.transform.localScale -= new Vector3(0.018f, 0.018f, 0.018f);
+                    var s = parent.transform.localScale;
+                    s -= new Vector3(0.018f, 0.018f, 0.018f);
+                    if (s.x > 0)
+                        parent.transform.localScale = s;
+                    if (s.x <= 0)
+                        parent.transform.localScale = new Vector3(0, 0, 0);
                 }                  
                 if (respawnCount >= 2)
                 {
-                    parent.transform.localScale += new Vector3(0.018f, 0.018f, 0.018f);
+                    var s = parent.transform.localScale += new Vector3(0.018f, 0.018f, 0.018f);
+                    if (s.x < 0.53f)
+                        parent.transform.localScale = s;
+                    if (s.x >= 0.53f)
+                        parent.transform.localScale = new Vector3(0.53f, 0.5f, 0.5f);
+
                     parent.transform.rotation = pt;
                     PlayerPos.transform.localPosition = spawnPoint.transform.localPosition;
                 }             
@@ -103,15 +125,6 @@ public class PlayerTail : MonoBehaviour
             respawnCount = 0;
         }
 
-    }
-
-    float Quadratic_in_out(float t, float b, float c, float d)
-    {
-        t /= d / 2.0f;
-        if (t < 1)
-            return c / 2.0f * t * t + b;
-        t = t - 1.0f;
-        return -c / 2.0f * (t * (t - 2.0f) - 1.0f) + b;
     }
 
     void OnCollisionEnter(Collision collision)
