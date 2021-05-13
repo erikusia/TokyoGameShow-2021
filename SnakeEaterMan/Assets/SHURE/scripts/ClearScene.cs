@@ -26,11 +26,19 @@ public class ClearScene : MonoBehaviour
     [SerializeField]
     private GameObject clear_text;
     [SerializeField]
-    private GameObject retry_exit;
-
+    private GameObject conte;
+    [SerializeField]
+    private GameObject exi;
+    //ボタンの色
+    float col_r, col_g, col_b, col_a;
     //マップ消す
     [SerializeField]
     private GameObject maap;
+    [SerializeField]
+    private GameObject buttonA;
+    [SerializeField]
+    private GameObject buttonB;
+
     void Start()
     {
         //ここでオブジェクトににプレイヤーカメラを入れている。
@@ -48,6 +56,15 @@ public class ClearScene : MonoBehaviour
         cameras[1].rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
         cameras[2].rect = new Rect(0.0f, 0.0f, 0.5f, 0.5f);
         cameras[3].rect = new Rect(0.5f, 0.0f, 0.5f, 0.5f);
+
+        //buttan
+        col_r = 0;
+        col_g = 0;
+        col_b = 0;
+        col_a = 0;
+        buttonA.GetComponent<Image>().color = new Color(0,0,0,0);
+        buttonB.GetComponent<Image>().color = new Color(0,0,0,0);
+
 
         Application.targetFrameRate = 60;
         //プレイヤー分の名前をリストに入れる
@@ -68,7 +85,7 @@ public class ClearScene : MonoBehaviour
     }
     void Update()
     {
-        //デバッグ用
+        ////デバッグ用
         //if (Input.GetKey(KeyCode.A))
         //{
         //    winner = "Player1";
@@ -91,7 +108,10 @@ public class ClearScene : MonoBehaviour
                 {
                     Quit();
                 }
+                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
                 //  Debug.Log("GameClear " + mat.name + " が勝ち");
+                Time.timeScale = 0f;
                 audioSource.PlayOneShot(clips);
             }
         }
@@ -111,9 +131,21 @@ public class ClearScene : MonoBehaviour
             cameras[2].depth = -1.0f;
             cameras[3].depth = -1.0f;
             Text clear = clear_text.GetComponent<Text>();
-            clear.text = ("WINNER" + winner);
-            Text re = retry_exit.GetComponent<Text>();
-            re.text = ("Retry_X・Exit_Y");
+            clear.text = ("Winner" + " " + winner);
+            Text re = conte.GetComponent<Text>();
+            re.text = ("Retry_X");
+            Text ex = exi.GetComponent<Text>();
+            ex.text = ("Exit_Y");
+            //if (Input.GetKeyDown("joystick button 2"))
+            //{
+            //    winner = null;
+            //    SceneManager.LoadScene("GamePlay");
+            //}
+            //if (Input.GetKeyDown("joystick button 3"))
+            //{
+            //    Quit();
+            //}
+            //Time.timeScale = 0f;
         }
         if (winner == "Player2")
         {
@@ -131,9 +163,12 @@ public class ClearScene : MonoBehaviour
             cameras[2].depth = -1.0f;
             cameras[3].depth = -1.0f;
             Text clear = clear_text.GetComponent<Text>();
-            clear.text = ("WINNER" + winner);
-            Text re = retry_exit.GetComponent<Text>();
-            re.text = ("Retry_X・Exit_Y");
+            clear.text = ("Winner" + " " + winner);
+
+            Text re = conte.GetComponent<Text>();
+            re.text = ("Retry_X");
+            Text ex = conte.GetComponent<Text>();
+            ex.text = ("Exit_Y");
             // Debug.Log("2の勝利");
         }
         if (winner == "Player3")
@@ -150,9 +185,12 @@ public class ClearScene : MonoBehaviour
             cameras[3].depth = -1.0f;
             //Debug.Log("3の勝利");
             Text clear = clear_text.GetComponent<Text>();
-            clear.text = ("WINNER" + winner);
-            Text re = retry_exit.GetComponent<Text>();
-            re.text = ("Retry_X・Exit_Y");
+            clear.text = ("Winner" + " " + winner);
+
+            Text re = conte.GetComponent<Text>();
+            re.text = ("Retry_X");
+            Text ex = conte.GetComponent<Text>();
+            ex.text = ("Exit_Y");
         }
         if (winner == "Player4")
         {
@@ -167,9 +205,11 @@ public class ClearScene : MonoBehaviour
             cameras[2].depth = -1.0f;
             cameras[3].depth = 1.0f;
             Text clear = clear_text.GetComponent<Text>();
-            clear.text = ("WINNER" + winner);
-            Text re = retry_exit.GetComponent<Text>();
-            re.text = ("Retry_X・Exit_Y");
+            clear.text = ("Winner" + " " + winner);
+            Text re = conte.GetComponent<Text>();
+            re.text = ("Retry_X");
+            Text ex = conte.GetComponent<Text>();
+            ex.text = ("Exit_Y");
             //Debug.Log("4の勝利");
         }
         if (peke > 1.0f)
