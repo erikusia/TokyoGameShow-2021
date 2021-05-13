@@ -7,7 +7,7 @@ public class TITLE_FLOG : MonoBehaviour
     private Transform flog;
     public Transform returnpos;
     float movetime = 0.0f;
-    bool flogflag = false;
+    //bool flogflag = false;
     // Start is called before the first frame update
     void Start()
     {
