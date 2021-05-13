@@ -68,6 +68,11 @@ public class ClearScene : MonoBehaviour
     }
     void Update()
     {
+        //デバッグ用
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    winner = "Player1";
+        //}
         //プレイヤー分のマテリアルが白か透明ではなかった場合誰かがクリアしている.
         foreach (var mat in matName)
         {
@@ -79,6 +84,7 @@ public class ClearScene : MonoBehaviour
                 winner = mat.name;
                 if (Input.GetKeyDown("joystick button 2"))
                 {
+                    winner = null;
                     SceneManager.LoadScene("GamePlay");
                 }
                 if (Input.GetKeyDown("joystick button 3"))
