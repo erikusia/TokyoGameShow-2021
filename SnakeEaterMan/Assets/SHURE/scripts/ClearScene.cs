@@ -10,10 +10,12 @@ public class ClearScene : MonoBehaviour
     public static string winner = "none";
     //検索用リスト
     private List<GameObject> matName = new List<GameObject>();
-    [Header("Scene.mp3"), SerializeField]
-    private AudioClip clips;
+    //[Header("Scene.mp3"), SerializeField]
+    //private AudioClip clips;
 
     //sounds
+    [SerializeField]
+    private AudioClip clip;
     private AudioSource audioSource;
     private Camera[] cameras = new Camera[4];//勝利時のカメラ
 
@@ -118,10 +120,9 @@ public class ClearScene : MonoBehaviour
 
                 Time.timeScale = 0;
 
-                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
-                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
+
                 //  Debug.Log("GameClear " + mat.name + " が勝ち");
-                audioSource.PlayOneShot(clips);
+            //    audioSource.PlayOneShot(clips);
             }
         }
 
@@ -156,6 +157,9 @@ public class ClearScene : MonoBehaviour
                 cameras[1].depth = -1.0f;
                 cameras[2].depth = -1.0f;
                 cameras[3].depth = -1.0f;
+
+                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
 
                 finish.GetComponent<Text>().color = new Color(1, 0, 0, 0);
                 Text clear = clear_text.GetComponent<Text>();
@@ -200,7 +204,8 @@ public class ClearScene : MonoBehaviour
                 cameras[1].depth = 1.0f;
                 cameras[2].depth = -1.0f;
                 cameras[3].depth = -1.0f;
-
+                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
                 finish.GetComponent<Text>().color = new Color(1, 0, 0, 0);
                 Text clear = clear_text.GetComponent<Text>();
                 clear.text = ("Winner" + " " + winner);
@@ -244,7 +249,8 @@ public class ClearScene : MonoBehaviour
                 cameras[3].depth = -1.0f;
                 //Debug.Log("3の勝利");
                 finish.GetComponent<Text>().color = new Color(1, 0, 0, 0);
-
+                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
                 Text clear = clear_text.GetComponent<Text>();
                 clear.text = ("Winner" + " " + winner);
                 Text re = conte.GetComponent<Text>();
@@ -284,6 +290,8 @@ public class ClearScene : MonoBehaviour
                 cameras[1].depth = -1.0f;
                 cameras[2].depth = -1.0f;
                 cameras[3].depth = 1.0f;
+                buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
                 Text clear = clear_text.GetComponent<Text>();
                 clear.text = ("Winner" + " " + winner);
                 Text re = conte.GetComponent<Text>();
@@ -319,7 +327,15 @@ public class ClearScene : MonoBehaviour
         {
             button_ct = 0;
         }
+        if (IsOperation())
+            audioSource.PlayOneShot(clip);
         before_ct = button_ct;
+    }
+    bool IsOperation()
+    {
+        if (before_ct != button_ct)
+            return true;
+        return false;
     }
     void OnButton(int Ct)
     {
@@ -332,15 +348,18 @@ public class ClearScene : MonoBehaviour
                 //Bを押したら
                 if (Input.GetButtonDown("B_ALL"))
                 {
+                    audioSource.PlayOneShot(clip);
+                    winner = null;
                     Retrybutton.GetComponent<retrybutton>().OnClick();
                 }
                 break;
-
             case 1:
                 Retrybutton.interactable = false;
                 exitbutton.interactable = true;
                 if (Input.GetButtonDown("B_ALL"))
                 {
+                    audioSource.PlayOneShot(clip);
+                    winner = null;
                     exitbutton.GetComponent<exit>().OnClick();
                 }
                 break;

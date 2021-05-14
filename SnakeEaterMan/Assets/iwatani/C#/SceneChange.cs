@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    [SerializeField]
-    private AudioClip clips;
+    //[SerializeField]
+    //private AudioClip clips;
     private AudioSource audioSource;
 
     //shrue_S
@@ -25,7 +25,7 @@ public class SceneChange : MonoBehaviour
   
         if (Input.anyKeyDown)
         {
-            audioSource.PlayOneShot(clips);
+          //  audioSource.PlayOneShot(clips);
             nextScene_G = true;
         }
       if (nextScene_G == true)
