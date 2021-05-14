@@ -41,7 +41,6 @@ public class PauseButton : MonoBehaviour
             if (y > 0)
             {
                 buttonCount--;
-
             }
             if (y < 0)
             {

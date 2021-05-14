@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -17,6 +16,7 @@ public class ClearScene : MonoBehaviour
     //sounds
     private AudioSource audioSource;
     private Camera[] cameras = new Camera[4];//勝利時のカメラ
+
     //カメラ格納場所
     private GameObject[] game_camera = new GameObject[4];
     float peke = 0.0f;//サイズ拡大用
@@ -29,16 +29,29 @@ public class ClearScene : MonoBehaviour
     private GameObject conte;
     [SerializeField]
     private GameObject exi;
-    //ボタンの色
-    float col_r, col_g, col_b, col_a;
+
     //マップ消す
     [SerializeField]
     private GameObject maap;
+
+    //ボタン入れる
     [SerializeField]
     private GameObject buttonA;
     [SerializeField]
     private GameObject buttonB;
+    [SerializeField]
+    private Button Retrybutton;
+    [SerializeField]
+    private Button exitbutton;
+    [SerializeField]
+    private GameObject finish;
+    //終了時に出すフラグ
+    bool fin_flag = false;
+    //タイマー
+    private float fin_time = 0.0f;
 
+    private int button_ct = 0;
+    private int before_ct = 0;
     void Start()
     {
         //ここでオブジェクトににプレイヤーカメラを入れている。
@@ -56,15 +69,10 @@ public class ClearScene : MonoBehaviour
         cameras[1].rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
         cameras[2].rect = new Rect(0.0f, 0.0f, 0.5f, 0.5f);
         cameras[3].rect = new Rect(0.5f, 0.0f, 0.5f, 0.5f);
-
-        //buttan
-        col_r = 0;
-        col_g = 0;
-        col_b = 0;
-        col_a = 0;
-        buttonA.GetComponent<Image>().color = new Color(0,0,0,0);
-        buttonB.GetComponent<Image>().color = new Color(0,0,0,0);
-
+        buttonA.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        buttonB.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        //終了時に出すフィニッシュその後ワイド
+        finish.GetComponent<Text>().color = new Color(1, 0, 0, 0);
 
         Application.targetFrameRate = 60;
         //プレイヤー分の名前をリストに入れる
@@ -75,43 +83,64 @@ public class ClearScene : MonoBehaviour
         }
         audioSource = GetComponent<AudioSource>();
     }
-    void Quit()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_STANDALONE
-      UnityEngine.Application.Quit();
-#endif
-    }
+
     void Update()
     {
+        Debug.Log(fin_flag);
+        Debug.Log(fin_time);
         ////デバッグ用
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    winner = "Player1";
-        //}
-        //プレイヤー分のマテリアルが白か透明ではなかった場合誰かがクリアしている.
+        if (Input.GetKey(KeyCode.A))
+        {
+            fin_flag = true;
+        }
+        if (fin_flag == true)
+        {
+            Time.timeScale = 0;
+            fin_time += 0.01f;
+        }
+        if (fin_time > 0.1f)
+        {
+            //テキスト
+            finish.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+            Text fin = finish.GetComponent<Text>();
+            fin.text = ("Finish");
+        }
+        if (fin_time > 0.8f)
+        {
+            winner = "Player1";
+            maap.SetActive(false);
+            buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
+            buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
+            finish.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+            //ボタン選択
+            ButtonInput();
+            OnButton(button_ct);
+            Time.timeScale = 0;
+            before_ct = button_ct;
+            // winner = null;
+            if (fin_time > 1.2f)
+            {
+                fin_flag = false;
+            }
+        }
         foreach (var mat in matName)
         {
-            //if (Input.anyKey)//{//    winner = "Player1";//    Debug.Log("えにーきー");//    //cameras[0].depth = 1.0f//    //cameras[0].rect = new Rect(0.0f, 0.0f, peke, peke);//}
             if (!mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White") &&
-                !mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("Transparency"))
+             !mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("Transparency"))
             {
                 maap.SetActive(false);
                 winner = mat.name;
-                if (Input.GetKeyDown("joystick button 2"))
-                {
-                    winner = null;
-                    SceneManager.LoadScene("GamePlay");
-                }
-                if (Input.GetKeyDown("joystick button 3"))
-                {
-                    Quit();
-                }
+
+                //ボタン選択
+                ButtonInput();
+                Debug.Log(button_ct);
+                OnButton(button_ct);
+                Time.timeScale = 0;
+
                 buttonA.GetComponent<Image>().color = new Color(0, 1, 0, 1);
                 buttonB.GetComponent<Image>().color = new Color(1, 0, 0, 1);
                 //  Debug.Log("GameClear " + mat.name + " が勝ち");
-                Time.timeScale = 0f;
+                winner = null;
                 audioSource.PlayOneShot(clips);
             }
         }
@@ -119,7 +148,7 @@ public class ClearScene : MonoBehaviour
         {
             size_check += 0.005f;//ｘ、ｙ
             peke += 0.006f;//ｗ、ｈ
-                           //画面配置場所：左上
+             //画面配置場所：左上
             cameras[0].rect = new Rect(0.0f, 0.5f - size_check, 0.5f + peke, 0.5f + peke);
             if (cameras[0].rect.y < 0)
             {
@@ -136,16 +165,9 @@ public class ClearScene : MonoBehaviour
             re.text = ("Retry_X");
             Text ex = exi.GetComponent<Text>();
             ex.text = ("Exit_Y");
-            //if (Input.GetKeyDown("joystick button 2"))
-            //{
-            //    winner = null;
-            //    SceneManager.LoadScene("GamePlay");
-            //}
-            //if (Input.GetKeyDown("joystick button 3"))
-            //{
-            //    Quit();
-            //}
-            //Time.timeScale = 0f;
+            //ボタン選択
+            //ButtonInput();
+            //OnButton(button_ct = 0);
         }
         if (winner == "Player2")
         {
@@ -220,6 +242,44 @@ public class ClearScene : MonoBehaviour
         {
             size_check = 0;
         }
+    }
+    void ButtonInput()
+    {
+        float y = Input.GetAxis("Vertical1");//受け取れない？
+                                             // Debug.Log(y);
+        if (y < 0)
+        {
+            button_ct = 1;
+        }
+        if (y > 0)
+        {
+            button_ct = 0;
+        }
+        before_ct = button_ct;
+    }
+    void OnButton(int Ct)
+    {
+        //Debug.Log(Ct);
+        switch (Ct)
+        {
+            case 0:
+                Retrybutton.interactable = true;
+                exitbutton.interactable = false;
+                //Bを押したら
+                if (Input.GetButtonDown("B_ALL"))
+                {
+                    Retrybutton.GetComponent<retrybutton>().OnClick();
+                }
+                break;
 
+            case 1:
+                Retrybutton.interactable = false;
+                exitbutton.interactable = true;
+                if (Input.GetButtonDown("B_ALL"))
+                {
+                    exitbutton.GetComponent<exit>().OnClick();
+                }
+                break;
+        }
     }
 }
