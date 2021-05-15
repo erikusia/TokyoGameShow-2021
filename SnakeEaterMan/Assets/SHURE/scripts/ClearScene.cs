@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//デバッグ用
+
 
 
 public class ClearScene : MonoBehaviour
@@ -35,6 +37,12 @@ public class ClearScene : MonoBehaviour
     //マップ消す
     [SerializeField]
     private GameObject maap;
+    //アイテム枠消す
+    [SerializeField]
+    private GameObject[] items;
+    //スライダー消す
+    [SerializeField]
+    private GameObject[] slider;
 
     //ボタン入れる
     [SerializeField]
@@ -110,7 +118,7 @@ public class ClearScene : MonoBehaviour
             if (!mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("White") &&
              !mat.transform.Find("group1").Find("Body1").GetComponent<SkinnedMeshRenderer>().material.name.Contains("Transparency"))
             {
-                maap.SetActive(false);
+
                 winner = mat.name;
 
                 //ボタン選択
@@ -120,14 +128,25 @@ public class ClearScene : MonoBehaviour
 
                 Time.timeScale = 0;
 
-
-                //  Debug.Log("GameClear " + mat.name + " が勝ち");
-            //    audioSource.PlayOneShot(clips);
             }
         }
 
         if (winner == "Player1")
         {
+            //非表示系
+            //map
+            maap.SetActive(false);
+            //アイテム欄
+            items[0].SetActive(false);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[3].SetActive(false);
+            //スライダー非表示
+            slider[0].SetActive(false);
+            slider[1].SetActive(false);
+            slider[2].SetActive(false);
+            slider[3].SetActive(false);
+
             fin_flag = true;
             //Debug.Log(fin_time);
             //Debug.Log(fin_flag);
@@ -176,6 +195,19 @@ public class ClearScene : MonoBehaviour
         }
         if (winner == "Player2")
         {
+            //非表示系
+            //map
+            maap.SetActive(false);
+            //アイテム欄
+            items[0].SetActive(false);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[3].SetActive(false);
+            //スライダー非表示
+            slider[0].SetActive(false);
+            slider[1].SetActive(false);
+            slider[2].SetActive(false);
+            slider[3].SetActive(false);
             //-----------------
             fin_flag2 = true;
             if (fin_flag2 == true)
@@ -223,6 +255,19 @@ public class ClearScene : MonoBehaviour
         }
         if (winner == "Player3")
         {
+            //非表示系
+            //map
+            maap.SetActive(false);
+            //アイテム欄
+            items[0].SetActive(false);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[3].SetActive(false);
+            //スライダー非表示
+            slider[0].SetActive(false);
+            slider[1].SetActive(false);
+            slider[2].SetActive(false);
+            slider[3].SetActive(false);
             fin_flag3 = true;
             if (fin_flag3 == true)
             {
@@ -266,6 +311,19 @@ public class ClearScene : MonoBehaviour
         }
         if (winner == "Player4")
         {
+            //非表示系
+            //map
+            maap.SetActive(false);
+            //アイテム欄
+            items[0].SetActive(false);
+            items[1].SetActive(false);
+            items[2].SetActive(false);
+            items[3].SetActive(false);
+            //スライダー非表示
+            slider[0].SetActive(false);
+            slider[1].SetActive(false);
+            slider[2].SetActive(false);
+            slider[3].SetActive(false);
             fin_flag4 = true;
             if (fin_flag4 == true)
             {
