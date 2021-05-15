@@ -531,7 +531,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 122258003044744089}
-  - component: {fileID: 537257568}
   - component: {fileID: 537257566}
   - component: {fileID: 537257567}
   m_Layer: 0
@@ -557,19 +556,6 @@ Transform:
   m_Father: {fileID: 5072107703456009991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &537257568
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4590418799670359816}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 242.8884, y: 194.31975, z: 122.92453}
-  m_Center: {x: -93.60773, y: -69.40571, z: 1.4930404}
 --- !u!95 &537257566
 Animator:
   serializedVersion: 3
@@ -1013,12 +999,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.45, z: 3.22}
+  m_Center: {x: 0, y: 0.54, z: 2.74}
 --- !u!95 &8785196223206906242
 Animator:
   serializedVersion: 3
@@ -1360,7 +1346,7 @@ GameObject:
   - component: {fileID: 1171165308932999823}
   m_Layer: 0
   m_Name: ago
-  m_TagString: Untagged
+  m_TagString: head1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

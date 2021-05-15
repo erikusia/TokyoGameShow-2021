@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
 
         string s = "A" + playerNumber.ToString();
 
-        if (Input.GetButton(s)|| gameObject.transform.Find("group1").GetComponentInChildren<PlayerTail>().dash)
+        if (Input.GetButton(s))
         {
             waitTime = 0;
             m_speed = m_dash;
@@ -94,7 +94,7 @@ public class PlayerMove : MonoBehaviour
         //ダッシュしたら音を鳴らす
         PlayDashSound();
 
-        if (dash == true && dashTime > 0&& !gameObject.transform.Find("group1").GetComponentInChildren<PlayerTail>().dash)
+        if (dash == true && dashTime > 0)
         {
             
             dashTime -= Time.deltaTime;

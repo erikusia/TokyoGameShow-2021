@@ -125,16 +125,23 @@ public class PlayerTail : MonoBehaviour
             respawnCount = 0;
         }
 
+        if(hit)
+        {
+            hit = false;
+        }
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.transform.root.name +"の"+ collision.gameObject.tag+ "に当たった");
+        Debug.Log("hitのステータス:"+hit);
         //頭がぶつかったら
         if (collision.gameObject.tag == "head1"&&!hit)
         {
             hit = true;
             
-            Debug.Log(collision.gameObject.transform.root.name+"当たった");
+            //Debug.Log(collision.gameObject.transform.root.name+"当たった");
             for (int i = 0; i < gameObjects.Length - 2; i++)
             {
                 gameObjects[i].GetComponent<Renderer>().material = gameObjects[i + 1].GetComponent<Renderer>().material;
@@ -157,14 +164,12 @@ public class PlayerTail : MonoBehaviour
             }
             //Debug.Log(dash);
         }
-        else if(dashTime>=2.5f)
-        {
-            this.dash = false;
-        }
-        else
-        {
-            hit = false;
-        }
+
+        //else if(dashTime>=2.5f)
+        //{
+        //    this.dash = false;
+        //}
+
 
     }
 }
