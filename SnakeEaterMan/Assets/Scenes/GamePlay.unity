@@ -1657,6 +1657,11 @@ PrefabInstance:
       propertyPath: SE.Array.data[11]
       value: 
       objectReference: {fileID: 8300000, guid: b4dc61ade9bac1a46bf47ead0ddac66b, type: 3}
+    - target: {fileID: 8785196223206906237, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8785196223206906239, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: enemys.Array.data[0]
@@ -2101,6 +2106,11 @@ PrefabInstance:
       propertyPath: SE.Array.data[11]
       value: 
       objectReference: {fileID: 8300000, guid: b4dc61ade9bac1a46bf47ead0ddac66b, type: 3}
+    - target: {fileID: 8785196223206906237, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: playerNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8785196223206906239, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: enemys.Array.data[0]
@@ -5514,12 +5524,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 953384762, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953384762, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953384762, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -287
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 953384762, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -483
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731708059, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731708059, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 1737290978, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
       propertyPath: m_Layer
@@ -5529,13 +5555,37 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1822831029, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822831029, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 310
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2122672043, guid: 6b0f58568262ffe48acf2e11d1250077, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -484
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386399190027457412, guid: 6b0f58568262ffe48acf2e11d1250077,
         type: 3}
@@ -6290,6 +6340,11 @@ PrefabInstance:
       propertyPath: SE.Array.data[11]
       value: 
       objectReference: {fileID: 8300000, guid: b4dc61ade9bac1a46bf47ead0ddac66b, type: 3}
+    - target: {fileID: 8785196223206906237, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: playerNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8785196223206906239, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: enemys.Array.data[0]
