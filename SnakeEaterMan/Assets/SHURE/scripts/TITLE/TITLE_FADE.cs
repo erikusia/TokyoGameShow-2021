@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TITLE_FADE : MonoBehaviour
 {
-    public  float speed = 0.01f;
+    public  float speed = 0.02f;
 
     float alfa;
     float R, G, B;
@@ -29,7 +29,7 @@ public class TITLE_FADE : MonoBehaviour
         {
             time += Time.deltaTime;
             //Debug.Log(time);
-            if (time > 3.3)
+            if (time > 3.1)
             {
                 GetComponent<Image>().color = new Color(R, G, B, alfa);
                 alfa += speed;

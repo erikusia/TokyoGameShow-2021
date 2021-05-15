@@ -31,7 +31,7 @@ public class SceneChange : MonoBehaviour
       if (nextScene_G == true)
         {
             go_scene_Time += Time.deltaTime;
-            if (go_scene_Time > 5)
+            if (go_scene_Time > 3.7f)
             {
                 SceneManager.LoadScene("GamePlay");
                 go_scene_Time = 0;
