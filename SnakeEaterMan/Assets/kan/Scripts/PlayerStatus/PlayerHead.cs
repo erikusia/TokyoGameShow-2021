@@ -72,7 +72,7 @@ public class PlayerHead : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //しっぽにぶつかったら
-        if (collision.gameObject.tag == "tail" && hitDef == false)
+        if (collision.gameObject.tag == "tail")
         {
             hitCount = 0;
             hit = true;

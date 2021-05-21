@@ -62,6 +62,11 @@ public class PlayerMove : MonoBehaviour
 
         DashSlider.value = dashTime;
 
+        if(dashTime>=5)
+        {
+            dashTime = 5;
+        }
+
         if (x != 0 || z != 0)
         {
             animator.SetFloat("MoveSpeed", 1.0f);
