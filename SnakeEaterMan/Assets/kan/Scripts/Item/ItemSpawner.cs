@@ -45,6 +45,7 @@ public class ItemSpawner : MonoBehaviour
 
                 if (spawnTimes[i] > spawnCount)
                 {
+                    spawnTimes[i] = 0.0f;
                     items[i] = Instantiate(itemObj, positions[i], Quaternion.identity);
                     items[i].GetComponent<ItemFruits>().spawn = true;
                     items[i].GetComponent<Transform>().position = new Vector3(originPos[i].x, originPos[i].y + 10.0f, originPos[i].z);
@@ -59,6 +60,7 @@ public class ItemSpawner : MonoBehaviour
 
                 if (p.y < originPos[i].y)
                 {
+                    
                     items[i].GetComponent<Transform>().position = originPos[i];
                     items[i].GetComponent<ItemFruits>().spawn = false;
                 }

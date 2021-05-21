@@ -1725,6 +1725,11 @@ PrefabInstance:
       propertyPath: enemys.Array.data[2]
       value: 
       objectReference: {fileID: 592047279}
+    - target: {fileID: 9083537964713839576, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37595e886c898e49867b9bcff579a65, type: 3}
 --- !u!4 &375222462 stripped
@@ -1930,6 +1935,36 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 727437234}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4790154662916220874, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: m_RootOrder
@@ -1990,6 +2025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 8160172316183852526, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: itemState
+      value: None
+      objectReference: {fileID: 0}
     - target: {fileID: 8160172316183852528, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: enemys.Array.size
@@ -2040,6 +2080,11 @@ PrefabInstance:
       propertyPath: enemys.Array.data[2]
       value: 
       objectReference: {fileID: 1440943097}
+    - target: {fileID: 9083537964713839576, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37595e886c898e49867b9bcff579a65, type: 3}
 --- !u!4 &405809818 stripped
@@ -2305,6 +2350,11 @@ PrefabInstance:
       propertyPath: enemys.Array.data[2]
       value: 
       objectReference: {fileID: 924801087}
+    - target: {fileID: 9083537964713839576, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f37595e886c898e49867b9bcff579a65, type: 3}
@@ -6621,13 +6671,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498651127294, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
@@ -6636,13 +6701,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3520290498885033920, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
@@ -6749,6 +6829,11 @@ PrefabInstance:
       propertyPath: enemys.Array.data[2]
       value: 
       objectReference: {fileID: 1440943097}
+    - target: {fileID: 9083537964713839576, guid: f37595e886c898e49867b9bcff579a65,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f37595e886c898e49867b9bcff579a65, type: 3}
@@ -7835,7 +7920,7 @@ PrefabInstance:
     - target: {fileID: 2787489288044819400, guid: 9b0a035a88f07424b8c4e8c76ec802d3,
         type: 3}
       propertyPath: spawnCount
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2787489288044819401, guid: 9b0a035a88f07424b8c4e8c76ec802d3,
         type: 3}

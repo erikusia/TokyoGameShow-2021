@@ -79,7 +79,8 @@ public class PlayerStatus : MonoBehaviour
             //あしおそ
             GetComponent<PlayerHead>().hit = true;
             //Debug.Log(gameObject.transform.root.gameObject.name + status);
-            status = "None";
+            if(transform.root.GetComponent<PlayerMove>().playerNumber != 0)
+                status = "None";
         }    
     }
 }
