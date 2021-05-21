@@ -125,9 +125,8 @@ public class PlayerHead : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "flog" && hitDef == false)
+        if (collision.gameObject.tag == "flog")
         {
-            hit = true;
             gameObject.transform.root.GetComponent<PlayerMove>().dashTime += 1;
             GetComponent<PlayerSE>().PlayerSoundName = "Eating2";
         }
