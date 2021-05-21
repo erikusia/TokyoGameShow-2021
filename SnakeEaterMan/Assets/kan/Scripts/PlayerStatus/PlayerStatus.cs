@@ -61,6 +61,7 @@ public class PlayerStatus : MonoBehaviour
         if (status == "Thunder")
         {
             thunderParticle.GetComponent<ParticleSystem>().Play();
+            debuffParticle.GetComponent<ParticleSystem>().Play();
         }
 
         if(status == "Debuff")
