@@ -243,7 +243,7 @@ public class ClearScene : MonoBehaviour
                 clear.text = ("Winner" + " " + winner);
                 Text re = conte.GetComponent<Text>();
                 re.text = ("Retry");
-                Text ex = conte.GetComponent<Text>();
+                Text ex = exi.GetComponent<Text>();
                 ex.text = ("Exit");
             }
             if (fin_time2 > 8.0f)
@@ -299,9 +299,9 @@ public class ClearScene : MonoBehaviour
                 Text clear = clear_text.GetComponent<Text>();
                 clear.text = ("Winner" + " " + winner);
                 Text re = conte.GetComponent<Text>();
-                re.text = ("Retry_X");
-                Text ex = conte.GetComponent<Text>();
-                ex.text = ("Exit_Y");
+                re.text = ("Retry");
+                Text ex = exi.GetComponent<Text>();
+                ex.text = ("Exit");
             }
             if (fin_time3 > 8.0f)
             {
@@ -354,7 +354,7 @@ public class ClearScene : MonoBehaviour
                 clear.text = ("Winner" + " " + winner);
                 Text re = conte.GetComponent<Text>();
                 re.text = ("Retry");
-                Text ex = conte.GetComponent<Text>();
+                Text ex = exi.GetComponent<Text>();
                 ex.text = ("Exit");
             }
             if (fin_time4 > 8.0f)
