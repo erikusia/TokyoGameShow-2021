@@ -8,6 +8,8 @@ public class ItemFruits : MonoBehaviour
     [SerializeField]
     private string status = "None";
     private bool isDead;
+
+    public bool spawn = false;
     public string GetStatus
     {
         get { return status; }
