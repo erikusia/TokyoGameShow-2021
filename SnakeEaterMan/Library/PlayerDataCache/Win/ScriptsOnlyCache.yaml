@@ -1,7 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReadmeEditor
     Assembly-CSharp.dll:
     - CameraMove
     - ClearScene
@@ -23,7 +21,6 @@ ScriptsOnlyBuild:
     - PlayerStatus
     - PlayerStatusManager
     - PlayerTail
-    - Readme
     - SceneChange
     - Snake_Ai
     - TITLE_FADE
@@ -878,7 +875,7 @@ ScriptsOnlyBuild:
     className: PauseScript
   - hash:
       serializedVersion: 2
-      Hash: 828b7ba17b749a615f15dfd8be8a12fa
+      Hash: 301ec22d0b3897db3d25270eb7536bc7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: hebi_ai
@@ -1190,7 +1187,7 @@ ScriptsOnlyBuild:
     className: ColorLookup
   - hash:
       serializedVersion: 2
-      Hash: caef9857c893d92f541c1daac9ac0fdd
+      Hash: 00bca3e0ee698c26109af9b0d5ceee85
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClearScene
@@ -1364,7 +1361,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: a110ca6553ec47b89f24d73c749b809d
+      Hash: eb4eee99a5fde35c02d2224cd6952dbf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemSpawner
@@ -1568,7 +1565,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerCanvas
   - hash:
       serializedVersion: 2
-      Hash: 75c239dca21aea3e848da184f8d4dae8
+      Hash: 6c1dd8761cc1dec50f06dc8e3918a670
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemFruits
@@ -1780,4 +1777,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/GamePlay.unity
-  playerPath: "C:/Users/K018A1484/Desktop/7\u73ED\u30B9\u30CD\u30FC\u30AF\u30A4\u30FC\u30BF\u30FC/SnakeEaterMan.exe"
+  playerPath: "C:/Users/K018A1484/Desktop/\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC
+    (4)/SnakeEaterMan.exe"
