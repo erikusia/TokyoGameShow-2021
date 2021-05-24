@@ -121,6 +121,13 @@ public class ClearScene : MonoBehaviour
 
                 winner = mat.name;
 
+                //勝ったやつ以外を消す
+                for(int i = 0;i < matName.Count;i++)
+                {
+                    if(winner != matName[i].name)
+                        matName[i].SetActive(false);
+                }
+
                 //ボタン選択
                 ButtonInput();
                 //  Debug.Log(button_ct);

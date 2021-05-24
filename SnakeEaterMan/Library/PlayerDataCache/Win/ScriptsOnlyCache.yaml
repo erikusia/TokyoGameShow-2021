@@ -1777,5 +1777,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/GamePlay.unity
-  playerPath: "C:/Users/K018A1484/Desktop/\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC
-    (4)/SnakeEaterMan.exe"
+  playerPath: D:/Unity_project/SnakeEaterMan.exe
