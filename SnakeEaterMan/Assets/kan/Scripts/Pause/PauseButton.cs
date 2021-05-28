@@ -35,8 +35,8 @@ public class PauseButton : MonoBehaviour
 
     void ButtonInput()
     {
-        float y = Input.GetAxis("Vertical1");
-        if(Time.frameCount % 15 == 0)
+        float y = Input.GetAxis("Vertical_ALL");
+        if(Time.frameCount % 12 == 0)
         {
             if (y > 0)
             {
@@ -74,8 +74,8 @@ public class PauseButton : MonoBehaviour
             case 0:
                 returnButton.interactable = true;
                 gameEndButton.interactable = titleButton.interactable = false;
-                //Bボタン押したら
-                if (Input.GetButtonDown("B_ALL"))
+                //Aボタン押したら
+                if (Input.GetButtonDown("A_ALL"))
                 {
                     if (GameObject.Find("HowToPlayer").GetComponentInChildren<HowToPlayer>() == null)
                     {
@@ -96,7 +96,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = true;
                 gameEndButton.interactable = returnButton.interactable = false;
                 //Bボタン押したら
-                if (Input.GetButtonDown("B_ALL"))
+                if (Input.GetButtonDown("A_ALL"))
                 {
                     //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
@@ -108,7 +108,7 @@ public class PauseButton : MonoBehaviour
                 titleButton.interactable = returnButton.interactable = false;
                 gameEndButton.interactable = true;
                 //Bボタン押したら
-                if (Input.GetButtonDown("B_ALL"))
+                if (Input.GetButtonDown("A_ALL"))
                 {
                     //audioSource.PlayOneShot(clip);
                     Time.timeScale = 1;
