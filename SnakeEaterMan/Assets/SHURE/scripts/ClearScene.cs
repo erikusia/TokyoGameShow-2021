@@ -170,7 +170,7 @@ public class ClearScene : MonoBehaviour
             }
             if (fin_time > 2.0f)
             {
-                size_check += 0.005f;//ｘ、ｙ
+                size_check += 0.006f;//ｘ、ｙ
                 peke += 0.006f;//ｗ、ｈ
                 //画面配置場所：左上
                 cameras[0].rect = new Rect(0.0f, 0.5f - size_check, 0.5f + peke, 0.5f + peke);
@@ -231,7 +231,7 @@ public class ClearScene : MonoBehaviour
             if (fin_time2 > 2.0f)
             {
                 //画面配置場所：右上
-                size_check += 0.005f;//ｘ、ｙ
+                size_check += 0.006f;//ｘ、ｙ
                 peke += 0.006f;//ｗ、ｈ
                 cameras[1].rect = new Rect(0.5f - size_check,
                     0.5f - size_check, 0.5f + peke, 0.5f + peke);
