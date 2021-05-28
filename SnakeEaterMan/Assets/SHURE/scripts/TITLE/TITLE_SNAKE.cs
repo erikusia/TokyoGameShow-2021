@@ -27,11 +27,11 @@ public class TITLE_SNAKE : MonoBehaviour
         {
             Scene_Time += Time.deltaTime;
             
-            Debug.Log(SNAKEA.transform.localPosition);
+            //Debug.Log(SNAKEA.transform.localPosition);
             if (Scene_Time > 0.5f)
             {
 
-                SNAKEA.transform.localPosition -= new Vector3(0.04f, 0.0f, 0.76f)*speed*Time.deltaTime;
+                SNAKEA.transform.localPosition -= new Vector3(0.04f, 0.0f, 0.7f)*speed*Time.deltaTime;
             }
             if (Scene_Time > 3.3f)
             {
