@@ -411,7 +411,7 @@ public class ClearScene : MonoBehaviour
                 Retrybutton.interactable = true;
                 exitbutton.interactable = false;
                 //Bを押したら
-                if (Input.GetButtonDown("B_ALL"))
+                if (Input.GetButtonDown("A_ALL"))
                 {
                     audioSource.PlayOneShot(clip);
                     winner = null;
@@ -421,7 +421,7 @@ public class ClearScene : MonoBehaviour
             case 1:
                 Retrybutton.interactable = false;
                 exitbutton.interactable = true;
-                if (Input.GetButtonDown("B_ALL"))
+                if (Input.GetButtonDown("A_ALL"))
                 {
                     audioSource.PlayOneShot(clip);
                     winner = null;
