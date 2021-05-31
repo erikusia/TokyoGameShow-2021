@@ -1729,12 +1729,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemys.Array.data[1]
       value: 
-      objectReference: {fileID: 592047279}
+      objectReference: {fileID: 924801087}
     - target: {fileID: 8828173922530370729, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: enemys.Array.data[2]
       value: 
-      objectReference: {fileID: 592047279}
+      objectReference: {fileID: 1440943097}
     - target: {fileID: 9083537964713839576, guid: f37595e886c898e49867b9bcff579a65,
         type: 3}
       propertyPath: looping
