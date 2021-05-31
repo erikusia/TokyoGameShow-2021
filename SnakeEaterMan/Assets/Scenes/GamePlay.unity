@@ -3951,12 +3951,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1825074441}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &830884128 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4243712668751913720, guid: d65c14a0dc763a443b0b95f1b3a8c6de,
-    type: 3}
-  m_PrefabInstance: {fileID: 1825074441}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &830884129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,12 +3967,6 @@ MonoBehaviour:
 --- !u!1 &880805166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2843635661170591129, guid: 64c621e63c04d3444adbf8a3d055b8d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 187233616}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &880805167 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3187791238216851235, guid: 64c621e63c04d3444adbf8a3d055b8d2,
     type: 3}
   m_PrefabInstance: {fileID: 187233616}
   m_PrefabAsset: {fileID: 0}
@@ -4421,7 +4409,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -4492,22 +4485,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint
@@ -5107,7 +5100,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -5178,22 +5176,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint
@@ -5505,7 +5503,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -5576,22 +5579,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint
@@ -6206,12 +6209,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1725106816}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1646513617 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8811513734197806336, guid: dbda33b540cb4cf4bad8a9d1e8a321f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1725106816}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1646513618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6356,7 +6353,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -6427,22 +6429,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint
@@ -7396,12 +7398,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 776129131}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1861904487 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1557294280312988055, guid: d4cdfc72fc5a00e4d9b09b1a38df6999,
-    type: 3}
-  m_PrefabInstance: {fileID: 776129131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1861904488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7736,7 +7732,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -7817,22 +7818,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint
@@ -8319,7 +8320,12 @@ PrefabInstance:
     - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: m_Speed
-      value: 3.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390402224176243307, guid: 082d5ffa45a625a4681a7adfd13aebbe,
+        type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1495487587940783838, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
@@ -8390,22 +8396,22 @@ PrefabInstance:
         type: 3}
       propertyPath: t2
       value: 
-      objectReference: {fileID: 1646513617}
+      objectReference: {fileID: 375222462}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t3
       value: 
-      objectReference: {fileID: 1861904487}
+      objectReference: {fileID: 1727414263}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: t4
       value: 
-      objectReference: {fileID: 880805167}
+      objectReference: {fileID: 478699858}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 830884128}
+      objectReference: {fileID: 405809818}
     - target: {fileID: 3296671630874382082, guid: 082d5ffa45a625a4681a7adfd13aebbe,
         type: 3}
       propertyPath: runpoint

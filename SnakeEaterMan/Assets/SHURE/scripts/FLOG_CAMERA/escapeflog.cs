@@ -50,29 +50,27 @@ public class escapeflog : MonoBehaviour
     t3.transform.position);//距離を計算
         distance4 = Vector3.Distance(transform.position,
     t4.transform.position);//距離を計算
-        if (distance < 10)
+        if (distance < 13)
         {
             agent.destination = agent.destination - (target.transform.position - agent.destination);
         }
         else
         { agent.destination = runpoint.transform.position; }
-        if (distance2 <10)//|| distance3 > 20 || distance4 > 20)
+        if (distance2 < 13)//|| distance3 > 20 || distance4 > 20)
         {
             agent.destination = agent.destination - (t2.transform.position - agent.destination);
         }
-        if (distance3 < 10)//|| distance2 > 20 || distance4 > 20)
+        if (distance3 < 13)//|| distance2 > 20 || distance4 > 20)
         {
             agent.destination = agent.destination - (t3.transform.position - agent.destination);
         }
-        if (distance4 < 10)//|| distance2 > 20 || distance3 > 20)
+        if (distance4 < 13)//|| distance2 > 20 || distance3 > 20)
         {
             agent.destination = agent.destination - (t4.transform.position - agent.destination);
         }
-
-
         if (deathflag == true)
         {
-          //  flog.GetComponent<Renderer>().material = materials[1];
+            //  flog.GetComponent<Renderer>().material = materials[1];
             //Debug.Log("死んだよ");
             deathCout += Time.deltaTime;
             for (int i = 0; i < FlogObj.Length; i++)
